@@ -1,6 +1,6 @@
-import { Command, flags } from '@oclif/command';
+import { flags } from '@oclif/command';
 
-import AdventCommand from '../../shared/adventCommand';
+import AdventCommand from '../../base';
 
 export default class Day0 extends AdventCommand {
     public static description = "This is an example day";

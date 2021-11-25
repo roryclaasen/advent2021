@@ -1,12 +1,27 @@
 {
   "compilerOptions": {
-    "declaration": false,
-    "importHelpers": true,
+    "target": "es2017",
     "module": "commonjs",
-    "outDir": "lib",
+
     "rootDir": "src",
+    "outDir": "lib",
+
+    "declaration": false,
+
+    "moduleResolution": "node",
+
     "strict": true,
-    "target": "es2017"
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true,
+
+    "removeComments": true,
+    "noUncheckedIndexedAccess": true,
+    "pretty": true,
+
+    "importHelpers": true,
+    "preserveSymlinks": true
   },
   "include": ["src/**/*"]
 }
