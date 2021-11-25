@@ -1,6 +1,6 @@
 {
-  "name": "advent2021",
-  "version": "2.0.0",
+  "name": "@roryclaasen/advent2021",
+  "version": "1.0.0",
   "description": "",
   "private": true,
   "bin": {
@@ -52,7 +52,8 @@
   },
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
-    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "posttest": "pnpm run lint",
+    "lint": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"

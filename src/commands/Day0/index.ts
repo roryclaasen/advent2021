@@ -1,28 +1,39 @@
+import { cli } from 'cli-ux';
+
 import { flags } from '@oclif/command';
 
 import AdventCommand from '../../base';
 
 export default class Day0 extends AdventCommand {
-    public static description = "This is an example day";
+    public static description = 'This is an Advent of Code example challenge';
+
+    public static examples = [
+        `$ advent2021 Day0
+The answer is: No Input
+`
+    ];
 
     public static flags = {
-        help: flags.help({ char: "h" }),
-        name: flags.string({ char: "n", description: "name to print" }),
+        help: flags.help({ char: 'h' }),
+        name: flags.string({ char: 'n', description: 'name to print' }),
+        throw: flags.boolean({ char: 't', description: 'throw an error' })
     };
 
-    public static args = [{ name: "file" }];
-
-    private sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+    public static args = [{ name: 'text' }];
 
     protected async compute(): Promise<string> {
         const { flags, args } = this.parse(Day0);
 
-        await this.sleep(2500);
+        await cli.wait(2500);
 
-        if (args.file && flags.name){
-            return `Hello ${flags.name} from ${args.file}`;
+        if (flags.throw) {
+            throw new Error('I am an error');
         }
 
-        return args.file ?? flags.name ?? "No Input";
+        if (args.text && flags.name) {
+            return `Hello ${flags.name} from ${args.text}`;
+        }
+
+        return args.text ?? flags.name ?? 'No Input';
     }
 }
