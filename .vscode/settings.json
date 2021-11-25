@@ -1,0 +1,42 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 180,
+  "importSorter.sortConfiguration.customOrderingRules.rules": [
+    {
+      "type": "importMember",
+      "regex": "^$",
+      "orderLevel": 10,
+      "disableSort": true
+    },
+    {
+      "regex": "^[@]",
+      "orderLevel": 30
+    },
+    {
+      "regex": "^[~]",
+      "orderLevel": 40
+    },
+    {
+      "regex": "^[.]",
+      "orderLevel": 50
+    }
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/tmp": false
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/tmp": true,
+    "oclif.manifest.json": true
+  },
+  "npm.packageManager": "pnpm",
+  "npm.validate.enable": false
+}
