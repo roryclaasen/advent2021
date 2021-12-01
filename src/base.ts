@@ -3,8 +3,6 @@ import cli from 'cli-ux';
 import { Command, flags } from '@oclif/command';
 
 export default abstract class AdventCommand<TAnswer = string> extends Command {
-    public static description = 'This is an Advent of Code challenge';
-
     protected abstract compute(): Promise<TAnswer>;
 
     public async run() {

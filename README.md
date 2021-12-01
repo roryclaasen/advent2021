@@ -32,8 +32,6 @@ USAGE
 
 ## `advent2021 Day1`
 
-This is my Advent of Code attempt for day 1
-
 ```
 USAGE
   $ advent2021 Day1

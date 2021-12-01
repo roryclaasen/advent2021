@@ -4,9 +4,7 @@ import path from 'path';
 import AdventCommand from '../../base';
 import { parseFile, splitLines } from '../../utils';
 
-export default class Day0 extends AdventCommand<[number, number]> {
-    public static description = 'This is my Advent of Code attempt for day 1';
-
+export default class Day1Challenge extends AdventCommand<[number, number]> {
     private async parseInput(): Promise<number[]> {
         return await parseFile(path.resolve(__dirname, 'input'))
             .then(splitLines)
