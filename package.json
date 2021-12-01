@@ -20,16 +20,16 @@
   },
   "homepage": "https://github.com/roryclaasen/advent2021#readme",
   "dependencies": {
-    "@oclif/command": "^1.8.4",
-    "@oclif/config": "^1.17.1",
+    "@oclif/command": "^1.8.6",
+    "@oclif/config": "^1.18.1",
     "@oclif/errors": "^1.3.5",
-    "@oclif/plugin-help": "^3.2.7",
+    "@oclif/plugin-help": "^3.2.9",
     "cli-ux": "^5.6.4",
     "lodash": "^4.17.21",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@oclif/dev-cli": "^1.26.3",
+    "@oclif/dev-cli": "^1.26.5",
     "@types/lodash": "^4.14.177",
     "eslint": "^8.3.0",
     "eslint-config-oclif": "^4.0.0",
