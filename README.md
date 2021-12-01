@@ -37,7 +37,7 @@ USAGE
   $ advent2021 Day1
 ```
 
-_See code: [src/commands/Day1/index.ts](https://github.com/roryclaasen/advent2021/blob/v1.0.0/src/commands/Day1/index.ts)_
+_See code: [src/commands/Day1/index.ts](https://github.com/roryclaasen/advent2021/blob/main/src/commands/Day1/index.ts)_
 
 ## `advent2021 help [COMMAND]`
 

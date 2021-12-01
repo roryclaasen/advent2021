@@ -48,6 +48,7 @@
   "oclif": {
     "commands": "./lib/commands",
     "bin": "advent2021",
+    "repositoryPrefix": "<%- repo %>/blob/main/<%- commandPath %>",
     "plugins": [
       "@oclif/plugin-help"
     ]
