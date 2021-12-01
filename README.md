@@ -27,28 +27,19 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`advent2021 Day0 [TEXT]`](#advent2021-day0-text)
+* [`advent2021 Day1`](#advent2021-day1)
 * [`advent2021 help [COMMAND]`](#advent2021-help-command)
 
-## `advent2021 Day0 [TEXT]`
+## `advent2021 Day1`
 
-This is an Advent of Code example challenge
+This is my Advent of Code attempt for day 1
 
 ```
 USAGE
-  $ advent2021 Day0 [TEXT]
-
-OPTIONS
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-  -t, --throw      throw an error
-
-EXAMPLE
-  $ advent2021 Day0
-  The answer is: No Input
+  $ advent2021 Day1
 ```
 
-_See code: [src/commands/Day0/index.ts](https://github.com/roryclaasen/advent2021/blob/v1.0.0/src/commands/Day0/index.ts)_
+_See code: [src/commands/Day1/index.ts](https://github.com/roryclaasen/advent2021/blob/v1.0.0/src/commands/Day1/index.ts)_
 
 ## `advent2021 help [COMMAND]`
 
