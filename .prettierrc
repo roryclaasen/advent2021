@@ -15,7 +15,7 @@
       }
     },
     {
-      "files": [".prettierrc", ".eslintrc"],
+      "files": [".prettierrc", ".eslintrc", ".releaserc"],
       "options": {
         "parser": "json",
         "tabWidth": 2

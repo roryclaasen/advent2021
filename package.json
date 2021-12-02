@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "bin": {
-    "advent": "./bin/run"
+    "advent2021": "./bin/run"
   },
   "repository": {
     "type": "git",
@@ -30,12 +30,18 @@
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.5",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.2",
+    "@semantic-release/npm": "^8.0.3",
     "@types/lodash": "^4.14.177",
     "eslint": "^8.3.0",
     "eslint-config-oclif": "^4.0.0",
     "eslint-config-oclif-typescript": "^1.0.2",
     "prettier": "^2.5.0",
     "rimraf": "^3.0.2",
+    "semantic-release": "^18.0.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   },
@@ -48,7 +54,6 @@
   "oclif": {
     "commands": "./lib/commands",
     "bin": "advent2021",
-    "repositoryPrefix": "<%- repo %>/blob/main/<%- commandPath %>",
     "plugins": [
       "@oclif/plugin-help"
     ]
@@ -62,5 +67,8 @@
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@roryclaasen"
+  }
 }
