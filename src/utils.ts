@@ -13,4 +13,3 @@ export const parseFile = (file: string) => {
 };
 
 export const splitLines = (data: string) => data.split('\n');
-

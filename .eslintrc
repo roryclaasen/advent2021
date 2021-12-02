@@ -1,5 +1,17 @@
 {
   "root": true,
-  "extends": ["oclif", "oclif-typescript"],
-  "parser": "@typescript-eslint/parser"
+  "parser": "@typescript-eslint/parser",
+  "extends": ["oclif", "oclif-typescript", "plugin:prettier/recommended", "prettier"],
+  "plugins": ["@typescript-eslint/eslint-plugin", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "unicorn/prefer-module": "off",
+        "unicorn/prefer-node-protocol": "off",
+        "unicorn/no-array-callback-reference": "off",
+        "unicorn/no-lonely-if": "off"
+      }
+    }
+  ]
 }

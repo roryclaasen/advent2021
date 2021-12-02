@@ -5,10 +5,10 @@ import AdventCommand from '../../base';
 import { parseFile, splitLines } from '../../utils';
 
 export default class Day1Challenge extends AdventCommand<[number, number]> {
-    private async parseInput(): Promise<number[]> {
-        return await parseFile(path.resolve(__dirname, 'input'))
-            .then(splitLines)
-            .then((lines) => lines.map(toNumber));
+    private async parseInput(test: boolean): Promise<number[]> {
+        const file = test ? 'testinput' : 'input';
+        const data = await parseFile(path.resolve(__dirname, file));
+        return splitLines(data).map(toNumber);
     }
 
     private part1(input: number[]): number {
@@ -29,18 +29,18 @@ export default class Day1Challenge extends AdventCommand<[number, number]> {
     }
 
     private part2(input: number[]): number {
-        let slidingInputs: number[] = [];
+        const slidingInputs: number[] = [];
 
-        for(let i = 0; i < input.length - 2; i++) {
-            let measurement = input[i] + input[i + 1] + input[i + 2];
-            slidingInputs.push(measurement)
+        for (let i = 0; i < input.length - 2; i++) {
+            const measurement = input[i] + input[i + 1] + input[i + 2];
+            slidingInputs.push(measurement);
         }
 
         return this.part1(slidingInputs);
     }
 
-    protected async compute(): Promise<[number, number]> {
-        const input = await this.parseInput();
+    protected async compute(test: boolean): Promise<[number, number]> {
+        const input = await this.parseInput(test);
 
         const part1 = this.part1(input);
         const part2 = this.part2(input);

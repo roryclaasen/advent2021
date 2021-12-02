@@ -40,7 +40,8 @@
   "npm.packageManager": "pnpm",
   "npm.validate.enable": false,
   "files.associations": {
-    "input": "plaintext",
+    "src/**/input": "plaintext",
+    "src/**/testinput": "plaintext",
     ".releaserc": "json"
   }
 }

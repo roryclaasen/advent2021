@@ -8,25 +8,26 @@ env:
   NODE_VERSION: '14.x'
 
 jobs:
-  # test:
-  #   name: Test
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout Code
-  #       uses: actions/checkout@v2
-  #     - name: Use Node.js ${{ env.NODE_VERSION }}
-  #       uses: actions/setup-node@v2
-  #       with:
-  #         node-version: ${{ env.NODE_VERSION }}
-  #         cache: 'npm'
-  #     - name: Install Dependencies
-  #       run: npm ci
-  #     - name: Test
-  #       run: npm test
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install Dependencies
+        run: npm ci
+      - name: Test
+        run: npm test
 
   release:
     name: Release
     runs-on: ubuntu-latest
+    needs: [test]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2

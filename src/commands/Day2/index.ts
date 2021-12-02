@@ -10,18 +10,16 @@ type Instruction = {
 };
 
 export default class Day2Challenge extends AdventCommand<[number, number]> {
-    private async parseInput(): Promise<Instruction[]> {
-        return await parseFile(path.resolve(__dirname, 'input'))
-            .then(splitLines)
-            .then((lines) =>
-                lines.map((line) => {
-                    const [dir, amount] = line.split(' ');
-                    return {
-                        dir,
-                        amount: toNumber(amount)
-                    } as Instruction;
-                })
-            );
+    private async parseInput(test: boolean): Promise<Instruction[]> {
+        const file = test ? 'testinput' : 'input';
+        const data = await parseFile(path.resolve(__dirname, file));
+        return splitLines(data).map((line) => {
+            const [dir, amount] = line.split(' ');
+            return {
+                dir,
+                amount: toNumber(amount)
+            } as Instruction;
+        });
     }
 
     private part1(input: Instruction[]): number {
@@ -29,12 +27,16 @@ export default class Day2Challenge extends AdventCommand<[number, number]> {
         let depth = 0;
 
         for (const instruction of input) {
-            if (instruction.dir === 'forward') {
-                horizontal += instruction.amount;
-            } else if (instruction.dir === 'down') {
-                depth += instruction.amount;
-            } else if (instruction.dir === 'up') {
-                depth -= instruction.amount;
+            switch (instruction.dir) {
+                case 'forward':
+                    horizontal += instruction.amount;
+                    break;
+                case 'down':
+                    depth += instruction.amount;
+                    break;
+                case 'up':
+                    depth -= instruction.amount;
+                    break;
             }
         }
 
@@ -47,21 +49,25 @@ export default class Day2Challenge extends AdventCommand<[number, number]> {
         let aim = 0;
 
         for (const instruction of input) {
-            if (instruction.dir === 'forward') {
-                horizontal += instruction.amount;
-                depth += aim * instruction.amount;
-            } else if (instruction.dir === 'down') {
-                aim += instruction.amount;
-            } else if (instruction.dir === 'up') {
-                aim -= instruction.amount;
+            switch (instruction.dir) {
+                case 'forward':
+                    horizontal += instruction.amount;
+                    depth += aim * instruction.amount;
+                    break;
+                case 'down':
+                    aim += instruction.amount;
+                    break;
+                case 'up':
+                    aim -= instruction.amount;
+                    break;
             }
         }
 
         return horizontal * depth;
     }
 
-    protected async compute(): Promise<[number, number]> {
-        const input = await this.parseInput();
+    protected async compute(test: boolean): Promise<[number, number]> {
+        const input = await this.parseInput(test);
 
         const part1 = this.part1(input);
         const part2 = this.part2(input);
