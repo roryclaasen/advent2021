@@ -38,5 +38,8 @@
     "oclif.manifest.json": true
   },
   "npm.packageManager": "pnpm",
-  "npm.validate.enable": false
+  "npm.validate.enable": false,
+  "files.associations": {
+    "input": "plaintext"
+  }
 }
