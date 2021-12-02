@@ -21,3 +21,9 @@
 * Sets the preset for @semantic-release/release-notes-generator ([0ef6059](https://github.com/roryclaasen/advent2021/commit/0ef6059423758b0e5237fc4b2b5bffae2f48bf78))
 
 # 1.0.0 (2021-12-02)
+
+### New
+
+* Adds day 2 solution ([520b635](https://github.com/roryclaasen/advent2021/commit/520b635ad98722e2303cd79f1efcdfd89621529d))
+* Adds day 1 attempt ([1f64082](https://github.com/roryclaasen/advent2021/commit/1f64082cf430d3a7f58f438c8f62b13ecb9a80f8))
+* Adds initial setup for advent of code 2021 ([9e8077d](https://github.com/roryclaasen/advent2021/commit/9e8077dec52ce09f16de1979c5935869f196ed49))
