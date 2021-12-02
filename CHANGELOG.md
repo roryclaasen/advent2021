@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/roryclaasen/advent2021/compare/v1.0.2...v1.0.3) (2021-12-02)
+
+
+### Fix
+
+* Changes package manager from pnpm back to npm ([462dd39](https://github.com/roryclaasen/advent2021/commit/462dd39a8566b97ea5d6e751f15ca17b594474c5))
+
 ## [1.0.2](https://github.com/roryclaasen/advent2021/compare/v1.0.1...v1.0.2) (2021-12-02)
 
 
