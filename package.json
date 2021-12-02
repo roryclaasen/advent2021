@@ -68,6 +68,6 @@
   },
   "types": "lib/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@roryclaasen"
+    "registry": "https://npm.pkg.github.com"
   }
 }
