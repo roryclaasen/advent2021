@@ -13,6 +13,7 @@ specifiers:
   '@semantic-release/npm': ^8.0.3
   '@types/lodash': ^4.14.177
   cli-ux: ^5.6.4
+  conventional-changelog-eslint: ^3.0.9
   eslint: ^8.3.0
   eslint-config-oclif: ^4.0.0
   eslint-config-oclif-typescript: ^1.0.2
@@ -41,6 +42,7 @@ devDependencies:
   '@semantic-release/github': 8.0.2_semantic-release@18.0.1
   '@semantic-release/npm': 8.0.3_semantic-release@18.0.1
   '@types/lodash': 4.14.177
+  conventional-changelog-eslint: 3.0.9
   eslint: 8.3.0
   eslint-config-oclif: 4.0.0_eslint@8.3.0
   eslint-config-oclif-typescript: 1.0.2_eslint@8.3.0+typescript@4.5.2
@@ -1230,6 +1232,13 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       compare-func: 2.0.0
+      q: 1.5.1
+    dev: true
+
+  /conventional-changelog-eslint/3.0.9:
+    resolution: {integrity: sha512-6NpUCMgU8qmWmyAMSZO5NrRd7rTgErjrm4VASam2u5jrZS0n38V7Y9CzTtLT2qwz5xEChDR4BduoWIr8TfwvXA==}
+    engines: {node: '>=10'}
+    dependencies:
       q: 1.5.1
     dev: true
 

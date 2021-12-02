@@ -36,6 +36,7 @@
     "@semantic-release/github": "^8.0.2",
     "@semantic-release/npm": "^8.0.3",
     "@types/lodash": "^4.14.177",
+    "conventional-changelog-eslint": "^3.0.9",
     "eslint": "^8.3.0",
     "eslint-config-oclif": "^4.0.0",
     "eslint-config-oclif-typescript": "^1.0.2",

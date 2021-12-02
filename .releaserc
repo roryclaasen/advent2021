@@ -1,7 +1,12 @@
 {
   "branches": ["main"],
   "plugins": [
-    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "eslint"
+      }
+    ],
     "@semantic-release/npm",
     "@semantic-release/release-notes-generator",
     [
@@ -13,7 +18,8 @@
     [
       "@semantic-release/git",
       {
-        "assets": ["package.json", "CHANGELOG.md", "README.md"]
+        "assets": ["package.json", "CHANGELOG.md", "README.md"],
+        "message": "Release: ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     ],
     "@semantic-release/github"
