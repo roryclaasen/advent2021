@@ -1,5 +1,21 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "[plaintext]": {
+    "files.insertFinalNewline": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "input": "plaintext",
+    "testinput": "plaintext",
+    ".releaserc": "json"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/tmp": false
+  },
   "importSorter.generalConfiguration.sortOnBeforeSave": true,
   "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 180,
   "importSorter.sortConfiguration.customOrderingRules.rules": [
@@ -22,26 +38,13 @@
       "orderLevel": 50
     }
   ],
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "files.exclude": {
-    "**/.git": true,
-    "**/node_modules": true,
-    "**/tmp": false
-  },
+  "npm.packageManager": "pnpm",
+  "npm.validate.enable": false,
   "search.exclude": {
     "**/.git": true,
     "**/node_modules": true,
     "**/tmp": true,
     "oclif.manifest.json": true
   },
-  "npm.packageManager": "pnpm",
-  "npm.validate.enable": false,
-  "files.associations": {
-    "src/**/input": "plaintext",
-    "src/**/testinput": "plaintext",
-    ".releaserc": "json"
-  }
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -16,6 +16,6 @@ trim_trailing_whitespace = false
 [*.{json,yml,eslintrc,releaserc}]
 indent_size = 2
 
-[{.{input,testinput}]
+[{input,testinput*}]
 insert_final_newline = false
 trim_trailing_whitespace = false
