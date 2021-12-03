@@ -1,3 +1,23 @@
+# [1.1.0](https://github.com/roryclaasen/advent2021/compare/v1.0.3...v1.1.0) (2021-12-03)
+
+
+### Build
+
+* Adds GH_TOKEN ([e7269b8](https://github.com/roryclaasen/advent2021/commit/e7269b8f7dafd28a8eb473f54c332ad0440a2b8e))
+* Adds new workflow for pull requests. Adds workflow testing for node versions ([76c637a](https://github.com/roryclaasen/advent2021/commit/76c637a07c33e2e224f13a32abc6024f8e7d7bd2))
+
+### Chore
+
+* Adds tests using the example data ([5b00f4e](https://github.com/roryclaasen/advent2021/commit/5b00f4ecce28bbc7106fc6483bf4c95055d7c0d3))
+
+### Docs
+
+* Updates changelog to have some data for v1.0.0 ([b8ae6c5](https://github.com/roryclaasen/advent2021/commit/b8ae6c5650049b68317845ac4fc95797ba3dfab0))
+
+### New
+
+* Adds day 3 completed challenge ([de26e08](https://github.com/roryclaasen/advent2021/commit/de26e08a275276852a9445662757beb50a8357ca))
+
 ## [1.0.3](https://github.com/roryclaasen/advent2021/compare/v1.0.2...v1.0.3) (2021-12-02)
 
 
