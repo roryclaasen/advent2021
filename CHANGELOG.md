@@ -1,3 +1,16 @@
+## [1.1.1](https://github.com/roryclaasen/advent2021/compare/v1.1.0...v1.1.1) (2021-12-03)
+
+
+### Chore
+
+* Removes final line in input files ([0b9cb9e](https://github.com/roryclaasen/advent2021/commit/0b9cb9ecfbc235d0b1f5c1890e5cf51070c6ca3b))
+* Removes generic type from challenge commands as they're not needed ([82bbe5b](https://github.com/roryclaasen/advent2021/commit/82bbe5bfed5731026f3a4b1c506e5cd2e93c4a1a))
+* Updates vscode settings to ignore paintext files ([16daefd](https://github.com/roryclaasen/advent2021/commit/16daefd056a858158919b55efb08f559737bf03c))
+
+### Fix
+
+* Changes Day3 test name to actually be Day3 ([eec5a41](https://github.com/roryclaasen/advent2021/commit/eec5a41d5bd0b405a1af1cb7ffc860a79d72781d))
+
 # [1.1.0](https://github.com/roryclaasen/advent2021/compare/v1.0.3...v1.1.0) (2021-12-03)
 
 

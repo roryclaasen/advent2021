@@ -16,7 +16,7 @@ $ npm install -g @roryclaasen/advent2021
 $ advent2021 COMMAND
 running command...
 $ advent2021 (-v|--version|version)
-@roryclaasen/advent2021/1.1.0 linux-x64 node-v16.13.0
+@roryclaasen/advent2021/1.1.1 linux-x64 node-v16.13.0
 $ advent2021 --help [COMMAND]
 USAGE
   $ advent2021 COMMAND
@@ -42,7 +42,7 @@ OPTIONS
   -t, --test  run using test data
 ```
 
-_See code: [src/commands/Day1/index.ts](https://github.com/roryclaasen/advent2021/blob/v1.1.0/src/commands/Day1/index.ts)_
+_See code: [src/commands/Day1/index.ts](https://github.com/roryclaasen/advent2021/blob/v1.1.1/src/commands/Day1/index.ts)_
 
 ## `advent2021 Day2`
 
@@ -54,7 +54,7 @@ OPTIONS
   -t, --test  run using test data
 ```
 
-_See code: [src/commands/Day2/index.ts](https://github.com/roryclaasen/advent2021/blob/v1.1.0/src/commands/Day2/index.ts)_
+_See code: [src/commands/Day2/index.ts](https://github.com/roryclaasen/advent2021/blob/v1.1.1/src/commands/Day2/index.ts)_
 
 ## `advent2021 Day3`
 
@@ -66,7 +66,7 @@ OPTIONS
   -t, --test  run using test data
 ```
 
-_See code: [src/commands/Day3/index.ts](https://github.com/roryclaasen/advent2021/blob/v1.1.0/src/commands/Day3/index.ts)_
+_See code: [src/commands/Day3/index.ts](https://github.com/roryclaasen/advent2021/blob/v1.1.1/src/commands/Day3/index.ts)_
 
 ## `advent2021 help [COMMAND]`
 
