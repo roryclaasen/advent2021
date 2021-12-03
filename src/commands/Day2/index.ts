@@ -9,7 +9,7 @@ type Instruction = {
     amount: number;
 };
 
-export default class Day2Challenge extends AdventCommand<[number, number]> {
+export default class Day2Challenge extends AdventCommand {
     private async parseInput(test: boolean): Promise<Instruction[]> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));

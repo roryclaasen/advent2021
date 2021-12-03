@@ -5,11 +5,11 @@ import { parseFile, splitLines } from '../../utils';
 
 type BinaryNumber = '0' | '1';
 
-export default class Day3Challenge extends AdventCommand<[number, number]> {
+export default class Day3Challenge extends AdventCommand {
     private async parseInput(test: boolean): Promise<string[]> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));
-        return splitLines(data).map((line) => line.replace(/\r?\n?$/, ''));
+        return splitLines(data);
     }
 
     private part1(input: string[]): number {
