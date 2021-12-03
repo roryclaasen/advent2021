@@ -2,7 +2,7 @@ import { expect, test } from '@oclif/test';
 
 import { answerString } from '../helpers/answer';
 
-describe('Day2', () => {
+describe('Day3', () => {
     test.stdout()
         .command(['Day3', '--test'])
         .it('Calculates answers correctly', (ctx) => {
