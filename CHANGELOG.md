@@ -1,3 +1,14 @@
+# [1.2.0](https://github.com/roryclaasen/advent2021/compare/v1.1.1...v1.2.0) (2021-12-04)
+
+
+### Chore
+
+* Ensures all lines read are in '\n' format ([66ff1ce](https://github.com/roryclaasen/advent2021/commit/66ff1ce975e541336a4f99b54e6b21ff71177c97))
+
+### New
+
+* Adds day 4 completed challenge ([e6deac2](https://github.com/roryclaasen/advent2021/commit/e6deac22dfd69067deccd153e5b41bdc08c40038))
+
 ## [1.1.1](https://github.com/roryclaasen/advent2021/compare/v1.1.0...v1.1.1) (2021-12-03)
 
 
