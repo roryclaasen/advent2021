@@ -6,10 +6,10 @@ export const parseFile = (file: string) => {
             if (err) {
                 reject(err);
             } else {
-                resolve(data);
+                resolve(data.replace(/\r/g, ''));
             }
         });
     });
 };
 
-export const splitLines = (data: string) => data.split('\n');
+export const splitLines = (data: string) => data.split(/\n/);
