@@ -31,28 +31,32 @@ export default class Day5Challenge extends AdventCommand {
         });
     }
 
-    private makeGrid(test: boolean) {
-        const size = test ? 10 : 1000;
+    private makeGrid(input: Line[]): number[][] {
+        let maxX = 0;
+        let maxY = 0;
+
+        for (const line of input) {
+            maxX = Math.max(maxX, line.from.x, line.to.x);
+            maxY = Math.max(maxY, line.from.y, line.to.y);
+        }
+
         const grid: number[][] = [];
-        for (let i = 0; i < size; i++) {
-            grid.push([]);
-            for (let j = 0; j < size; j++) {
-                grid[i].push(0);
+        for (let y = 0; y <= maxY; y++) {
+            grid[y] = [];
+            for (let x = 0; x <= maxX; x++) {
+                grid[y][x] = 0;
             }
         }
 
         return grid;
     }
 
-    private part1(test: boolean, input: Line[]): number {
-        return this.part2(
-            test,
-            input.filter((line) => line.from.x === line.to.x || line.from.y === line.to.y)
-        );
+    private part1(input: Line[]): number {
+        return this.part2(input.filter((line) => line.from.x === line.to.x || line.from.y === line.to.y));
     }
 
-    private part2(test: boolean, input: Line[]): number {
-        const grid = this.makeGrid(test);
+    private part2(input: Line[]): number {
+        const grid = this.makeGrid(input);
 
         for (const line of input) {
             const dir: Point = {
@@ -79,8 +83,8 @@ export default class Day5Challenge extends AdventCommand {
     protected async compute(test: boolean): Promise<[number, number]> {
         const input = await this.parseInput(test);
 
-        const part1 = this.part1(test, input);
-        const part2 = this.part2(test, input);
+        const part1 = this.part1(input);
+        const part2 = this.part2(input);
 
         return [part1, part2];
     }
