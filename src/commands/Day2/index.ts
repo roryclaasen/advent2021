@@ -10,6 +10,8 @@ type Instruction = {
 };
 
 export default class Day2Challenge extends AdventCommand {
+    static aliases = ['day2', 'day:2'];
+
     private async parseInput(test: boolean): Promise<Instruction[]> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));

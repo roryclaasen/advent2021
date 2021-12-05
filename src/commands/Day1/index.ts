@@ -5,6 +5,8 @@ import AdventCommand from '../../base';
 import { parseFile, splitLines } from '../../utils';
 
 export default class Day1Challenge extends AdventCommand {
+    static aliases = ['day1', 'day:1'];
+
     private async parseInput(test: boolean): Promise<number[]> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));

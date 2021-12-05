@@ -6,6 +6,8 @@ import { parseFile, splitLines } from '../../utils';
 type BinaryNumber = '0' | '1';
 
 export default class Day3Challenge extends AdventCommand {
+    static aliases = ['day3', 'day:3'];
+
     private async parseInput(test: boolean): Promise<string[]> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));

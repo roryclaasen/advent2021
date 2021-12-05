@@ -15,6 +15,8 @@ type Line = {
 };
 
 export default class Day5Challenge extends AdventCommand {
+    static aliases = ['day5', 'day:5'];
+
     private async parseInput(test: boolean): Promise<Line[]> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));
