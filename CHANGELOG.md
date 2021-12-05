@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/roryclaasen/advent2021/compare/v1.2.0...v1.3.0) (2021-12-05)
+
+
+### New
+
+* Adds command aliases to all current challenges ([cecb1c6](https://github.com/roryclaasen/advent2021/commit/cecb1c6f0e9c2345305b42ef21789e82abf438cf))
+* Adds day 5 completed challenge ([49f3a3c](https://github.com/roryclaasen/advent2021/commit/49f3a3c3f9e71d6498156da0ab91c9e362e57eef))
+
+### Upgrade
+
+* Updates all packages to latest (not eslint) ([aae4ca8](https://github.com/roryclaasen/advent2021/commit/aae4ca8a206b3e85059bd812a369c308cb430efa))
+
 # [1.2.0](https://github.com/roryclaasen/advent2021/compare/v1.1.1...v1.2.0) (2021-12-04)
 
 
