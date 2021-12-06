@@ -1,3 +1,14 @@
+# [1.4.0](https://github.com/roryclaasen/advent2021/compare/v1.3.0...v1.4.0) (2021-12-06)
+
+
+### Chore
+
+* Makes grid resize itself based off its input ([a31fbee](https://github.com/roryclaasen/advent2021/commit/a31fbee995e0580c1c820d5bd8149becbedc4d60))
+
+### New
+
+* Adds day 6 completed challenge ([77ceea9](https://github.com/roryclaasen/advent2021/commit/77ceea9e61506db471bb1058ad7835e562108e21))
+
 # [1.3.0](https://github.com/roryclaasen/advent2021/compare/v1.2.0...v1.3.0) (2021-12-05)
 
 
