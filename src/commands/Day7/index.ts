@@ -39,14 +39,7 @@ export default class Day7Challenge extends AdventCommand {
     }
 
     private part2(input: number[]): number {
-        return this.simulate(input, (dist) => {
-            let sum = 0;
-            for (let y = 1; y <= dist; y++) {
-                sum += y;
-            }
-
-            return sum;
-        });
+        return this.simulate(input, (dist) => (dist * (dist + 1)) / 2);
     }
 
     protected async compute(test: boolean): Promise<[number, number]> {
