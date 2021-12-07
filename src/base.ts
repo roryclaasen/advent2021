@@ -3,6 +3,11 @@ import { cloneDeep } from 'lodash';
 
 import { Command, flags } from '@oclif/command';
 
+type Answer<T> = {
+    part: number;
+    answer: T;
+};
+
 export default abstract class AdventCommand<TInput = string[], TAnswer = number> extends Command {
     protected abstract parseInput(test: boolean): Promise<TInput>;
 
@@ -10,18 +15,34 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
 
     protected abstract part2(input: TInput): TAnswer;
 
-    protected async compute(test: boolean): Promise<[TAnswer, TAnswer]> {
-        const part1Input = await this.parseInput(test);
-        const part2Input = cloneDeep(part1Input);
+    private async compute(test: boolean, part: number): Promise<Answer<TAnswer>[]> {
+        const input = await this.parseInput(test);
 
-        const part1 = this.part1(part1Input);
-        const part2 = this.part2(part2Input);
+        const answers: Answer<TAnswer>[] = [];
 
-        return [part1, part2];
+        switch (part) {
+            case 1: {
+                answers.push({ part: 1, answer: this.part1(input) });
+                break;
+            }
+
+            case 2: {
+                answers.push({ part: 2, answer: this.part2(input) });
+                break;
+            }
+
+            default: {
+                answers.push({ part: 1, answer: this.part1(input) }, { part: 2, answer: this.part2(cloneDeep(input)) });
+                break;
+            }
+        }
+
+        return answers;
     }
 
-    static flags = {
-        test: flags.boolean({ char: 't', description: 'run using test data' })
+    public static flags = {
+        part: flags.integer({ char: 'p', description: 'Part to run', options: ['1', '2'] }),
+        test: flags.boolean({ char: 't', description: 'Run using test data' })
     };
 
     public async run() {
@@ -29,7 +50,7 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
 
         cli.action.start('Processing challenge');
         try {
-            const result = await this.compute(flags.test);
+            const result = await this.compute(flags.test, flags.part);
             cli.action.stop();
             this.logAnswer(result);
         } catch (error) {
@@ -42,9 +63,9 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
         }
     }
 
-    protected logAnswer(answer: [TAnswer, TAnswer]) {
-        for (const [i, value] of answer.entries()) {
-            this.log(`Part ${i + 1} Answer: ${value}`);
+    private logAnswer(answer: Answer<TAnswer>[]) {
+        for (const [, value] of answer.entries()) {
+            this.log(`Part ${value.part} Answer: ${value.answer}`);
         }
     }
 }
