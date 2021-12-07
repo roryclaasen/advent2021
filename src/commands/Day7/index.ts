@@ -15,8 +15,9 @@ export default class Day7Challenge extends AdventCommand {
 
     private simulate(input: number[], cal: (dist: number) => number): number {
         let cheapest = -1;
-        const lastCrab = Math.max(...input);
-        for (let i = 0; i < lastCrab; i++) {
+        const closeCrab = Math.min(...input);
+        const farCrab = Math.max(...input);
+        for (let i = closeCrab; i < farCrab; i++) {
             let currentSum = 0;
             for (const [, current] of input.entries()) {
                 const dist = Math.abs(current - i);
