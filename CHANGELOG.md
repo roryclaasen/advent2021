@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/roryclaasen/advent2021/compare/v1.6.0...v1.6.1) (2021-12-07)
+
+
+### Fix
+
+* Part2 input should be copied before part1 is run ([ef16c94](https://github.com/roryclaasen/advent2021/commit/ef16c9446fc0745db1b3bac58d7bb947763a8a04))
+
 # [1.6.0](https://github.com/roryclaasen/advent2021/compare/v1.5.0...v1.6.0) (2021-12-07)
 
 
