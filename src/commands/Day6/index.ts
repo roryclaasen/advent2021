@@ -4,10 +4,12 @@ import path from 'path';
 import AdventCommand from '../../base';
 import { parseFile } from '../../utils';
 
-export default class Day6Challenge extends AdventCommand {
+type Input = Map<number, number>;
+
+export default class Day6Challenge extends AdventCommand<Input> {
     static aliases = ['day6', 'day:6'];
 
-    private async parseInput(test: boolean): Promise<Map<number, number>> {
+    protected async parseInput(test: boolean): Promise<Input> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));
         const allFish = data.split(',').map(toNumber);
@@ -24,7 +26,7 @@ export default class Day6Challenge extends AdventCommand {
         return fishMap;
     }
 
-    private simulate(input: Map<number, number>, days: number): number {
+    private simulate(input: Input, days: number): number {
         for (let d = 0; d < days; d++) {
             const dayFish = new Map<number, number>();
             for (const [stage, count] of input) {
@@ -42,20 +44,11 @@ export default class Day6Challenge extends AdventCommand {
         return sum([...input.values()]);
     }
 
-    private part1(input: Map<number, number>): number {
-        return this.simulate(new Map(input), 80);
+    protected part1(input: Input): number {
+        return this.simulate(input, 80);
     }
 
-    private part2(input: Map<number, number>): number {
-        return this.simulate(new Map(input), 256);
-    }
-
-    protected async compute(test: boolean): Promise<[number, number]> {
-        const input = await this.parseInput(test);
-
-        const part1 = this.part1(input);
-        const part2 = this.part2(input);
-
-        return [part1, part2];
+    protected part2(input: Input): number {
+        return this.simulate(input, 256);
     }
 }

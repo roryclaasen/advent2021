@@ -14,10 +14,12 @@ type Line = {
     to: Point;
 };
 
-export default class Day5Challenge extends AdventCommand {
+type Input = Line[];
+
+export default class Day5Challenge extends AdventCommand<Input> {
     static aliases = ['day5', 'day:5'];
 
-    private async parseInput(test: boolean): Promise<Line[]> {
+    protected async parseInput(test: boolean): Promise<Input> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));
         return splitLines(data).map((line) => {
@@ -31,7 +33,7 @@ export default class Day5Challenge extends AdventCommand {
         });
     }
 
-    private makeGrid(input: Line[]): number[][] {
+    private makeGrid(input: Input): number[][] {
         let maxX = 0;
         let maxY = 0;
 
@@ -51,11 +53,11 @@ export default class Day5Challenge extends AdventCommand {
         return grid;
     }
 
-    private part1(input: Line[]): number {
+    protected part1(input: Input): number {
         return this.part2(input.filter((line) => line.from.x === line.to.x || line.from.y === line.to.y));
     }
 
-    private part2(input: Line[]): number {
+    protected part2(input: Input): number {
         const grid = this.makeGrid(input);
 
         for (const line of input) {
@@ -78,14 +80,5 @@ export default class Day5Challenge extends AdventCommand {
         }
 
         return grid.flat().filter((i) => i > 1).length;
-    }
-
-    protected async compute(test: boolean): Promise<[number, number]> {
-        const input = await this.parseInput(test);
-
-        const part1 = this.part1(input);
-        const part2 = this.part2(input);
-
-        return [part1, part2];
     }
 }

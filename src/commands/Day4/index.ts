@@ -11,18 +11,18 @@ type BingoCell = {
 
 type BingoBoard = BingoCell[][];
 
-interface Bingo {
+type Input = {
     series: number[];
     boards: BingoBoard[];
-}
+};
 
 const WIDTH = 5;
 const HEIGHT = 5;
 
-export default class Day4Challenge extends AdventCommand {
+export default class Day4Challenge extends AdventCommand<Input> {
     static aliases = ['day4', 'day:4'];
 
-    private async parseInput(test: boolean): Promise<Bingo> {
+    protected async parseInput(test: boolean): Promise<Input> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));
         const parts = data.split(/\n{2}/);
@@ -82,8 +82,6 @@ export default class Day4Challenge extends AdventCommand {
     }
 
     private calculateScore(board: BingoBoard, winningMove: number): number {
-        // this.log(board);
-
         const winnerValues = board
             .flat()
             .filter((cell) => !cell.marked)
@@ -92,7 +90,7 @@ export default class Day4Challenge extends AdventCommand {
         return sum(winnerValues) * winningMove;
     }
 
-    private part1(input: Bingo): number {
+    protected part1(input: Input): number {
         let currentPicked: number;
         let winner: BingoBoard;
         for (const picked of input.series) {
@@ -118,7 +116,7 @@ export default class Day4Challenge extends AdventCommand {
         return this.calculateScore(winner, currentPicked);
     }
 
-    private part2(input: Bingo): number {
+    protected part2(input: Input): number {
         let lastWinner = -1;
 
         for (const picked of input.series) {
@@ -135,14 +133,5 @@ export default class Day4Challenge extends AdventCommand {
         }
 
         return lastWinner;
-    }
-
-    protected async compute(test: boolean): Promise<[number, number]> {
-        const input = await this.parseInput(test);
-
-        const part1 = this.part1(Object.assign({}, input));
-        const part2 = this.part2(Object.assign({}, input));
-
-        return [part1, part2];
     }
 }

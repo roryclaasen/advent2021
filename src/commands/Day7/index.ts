@@ -4,16 +4,18 @@ import path from 'path';
 import AdventCommand from '../../base';
 import { parseFile } from '../../utils';
 
-export default class Day7Challenge extends AdventCommand {
+type Input = number[];
+
+export default class Day7Challenge extends AdventCommand<Input> {
     static aliases = ['day7', 'day:7'];
 
-    private async parseInput(test: boolean): Promise<number[]> {
+    protected async parseInput(test: boolean): Promise<Input> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));
         return data.split(',').map(toNumber);
     }
 
-    private simulate(input: number[], cal: (dist: number) => number): number {
+    private simulate(input: Input, cal: (dist: number) => number): number {
         let cheapest = -1;
         const closeCrab = Math.min(...input);
         const farCrab = Math.max(...input);
@@ -34,20 +36,11 @@ export default class Day7Challenge extends AdventCommand {
         return cheapest;
     }
 
-    private part1(input: number[]): number {
+    protected part1(input: Input): number {
         return this.simulate(input, (dist) => dist);
     }
 
-    private part2(input: number[]): number {
+    protected part2(input: Input): number {
         return this.simulate(input, (dist) => (dist * (dist + 1)) / 2);
-    }
-
-    protected async compute(test: boolean): Promise<[number, number]> {
-        const input = await this.parseInput(test);
-
-        const part1 = this.part1(input);
-        const part2 = this.part2(input);
-
-        return [part1, part2];
     }
 }

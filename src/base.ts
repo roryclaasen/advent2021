@@ -1,9 +1,24 @@
 import cli from 'cli-ux';
+import { cloneDeep } from 'lodash';
 
 import { Command, flags } from '@oclif/command';
 
-export default abstract class AdventCommand<TAnswer = [number, number]> extends Command {
-    protected abstract compute(test: boolean): Promise<TAnswer>;
+export default abstract class AdventCommand<TInput = string[], TAnswer = number> extends Command {
+    protected abstract parseInput(test: boolean): Promise<TInput>;
+
+    protected abstract part1(input: TInput): TAnswer;
+
+    protected abstract part2(input: TInput): TAnswer;
+
+    protected async compute(test: boolean): Promise<[TAnswer, TAnswer]> {
+        const part1Input = await this.parseInput(test);
+        const part2Input = cloneDeep(part1Input);
+
+        const part1 = this.part1(part1Input);
+        const part2 = this.part2(part2Input);
+
+        return [part1, part2];
+    }
 
     static flags = {
         test: flags.boolean({ char: 't', description: 'run using test data' })
@@ -27,13 +42,9 @@ export default abstract class AdventCommand<TAnswer = [number, number]> extends 
         }
     }
 
-    protected logAnswer(answer: TAnswer) {
-        if (Array.isArray(answer)) {
-            for (const [i, value] of answer.entries()) {
-                this.log(`Part ${i + 1} Answer: ${value}`);
-            }
-        } else {
-            this.log(`The answer is: ${answer}`);
+    protected logAnswer(answer: [TAnswer, TAnswer]) {
+        for (const [i, value] of answer.entries()) {
+            this.log(`Part ${i + 1} Answer: ${value}`);
         }
     }
 }

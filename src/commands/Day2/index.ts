@@ -9,10 +9,12 @@ type Instruction = {
     amount: number;
 };
 
-export default class Day2Challenge extends AdventCommand {
+type Input = Instruction[];
+
+export default class Day2Challenge extends AdventCommand<Input> {
     static aliases = ['day2', 'day:2'];
 
-    private async parseInput(test: boolean): Promise<Instruction[]> {
+    protected async parseInput(test: boolean): Promise<Input> {
         const file = test ? 'testinput' : 'input';
         const data = await parseFile(path.resolve(__dirname, file));
         return splitLines(data).map((line) => {
@@ -24,7 +26,7 @@ export default class Day2Challenge extends AdventCommand {
         });
     }
 
-    private part1(input: Instruction[]): number {
+    protected part1(input: Input): number {
         let horizontal = 0;
         let depth = 0;
 
@@ -45,7 +47,7 @@ export default class Day2Challenge extends AdventCommand {
         return horizontal * depth;
     }
 
-    private part2(input: Instruction[]): number {
+    protected part2(input: Input): number {
         let horizontal = 0;
         let depth = 0;
         let aim = 0;
@@ -66,14 +68,5 @@ export default class Day2Challenge extends AdventCommand {
         }
 
         return horizontal * depth;
-    }
-
-    protected async compute(test: boolean): Promise<[number, number]> {
-        const input = await this.parseInput(test);
-
-        const part1 = this.part1(input);
-        const part2 = this.part2(input);
-
-        return [part1, part2];
     }
 }
