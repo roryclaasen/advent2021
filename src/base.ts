@@ -32,7 +32,8 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
             }
 
             default: {
-                answers.push({ part: 1, answer: this.part1(input) }, { part: 2, answer: this.part2(cloneDeep(input)) });
+                const input2 = cloneDeep(input);
+                answers.push({ part: 1, answer: this.part1(input) }, { part: 2, answer: this.part2(input2) });
                 break;
             }
         }
