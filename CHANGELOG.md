@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/roryclaasen/advent2021/compare/v1.4.0...v1.5.0) (2021-12-07)
+
+
+### New
+
+* Adds day 7 completed challenge ([61a77d4](https://github.com/roryclaasen/advent2021/commit/61a77d454c1a2281df526e2712d0b8016e80dfc1))
+
 # [1.4.0](https://github.com/roryclaasen/advent2021/compare/v1.3.0...v1.4.0) (2021-12-06)
 
 

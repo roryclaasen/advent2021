@@ -1,6 +1,6 @@
 {
   "name": "@roryclaasen/advent2021",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "My 2021 Advent of Code attempt",
   "bin": {
     "advent2021": "./bin/run"
