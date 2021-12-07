@@ -1,3 +1,16 @@
+# [1.6.0](https://github.com/roryclaasen/advent2021/compare/v1.5.0...v1.6.0) (2021-12-07)
+
+
+### Chore
+
+* Changes part2 to use the General Summation Formula. ([96595ab](https://github.com/roryclaasen/advent2021/commit/96595ab37792904c88e80e64c883b080e90ba116))
+* Refactors command in prep to run each part separately ([1b42f28](https://github.com/roryclaasen/advent2021/commit/1b42f286892e0fdd7e461e931c4f9d92ec4ed65e))
+* Removes some processing cycles by starting at the closest crab ([1158577](https://github.com/roryclaasen/advent2021/commit/115857721df1aa0c33ae4e0d0ba24461353c19cd))
+
+### New
+
+* Adds the ability to run each part individuality ([cf14761](https://github.com/roryclaasen/advent2021/commit/cf14761605c2aa626898e0dd242db71a063601a0))
+
 # [1.5.0](https://github.com/roryclaasen/advent2021/compare/v1.4.0...v1.5.0) (2021-12-07)
 
 
