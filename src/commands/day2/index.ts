@@ -12,7 +12,7 @@ type Instruction = {
 type Input = Instruction[];
 
 export default class Day2Challenge extends AdventCommand<Input> {
-    static aliases = ['day2', 'day:2'];
+    static aliases = ['day:2'];
 
     protected async parseInput(test: boolean): Promise<Input> {
         const file = test ? 'testinput' : 'input';

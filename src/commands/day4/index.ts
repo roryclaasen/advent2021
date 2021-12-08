@@ -20,7 +20,7 @@ const WIDTH = 5;
 const HEIGHT = 5;
 
 export default class Day4Challenge extends AdventCommand<Input> {
-    static aliases = ['day4', 'day:4'];
+    static aliases = ['day:4'];
 
     protected async parseInput(test: boolean): Promise<Input> {
         const file = test ? 'testinput' : 'input';

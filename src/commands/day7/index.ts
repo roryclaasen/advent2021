@@ -7,7 +7,7 @@ import { parseFile } from '../../utils';
 type Input = number[];
 
 export default class Day7Challenge extends AdventCommand<Input> {
-    static aliases = ['day7', 'day:7'];
+    static aliases = ['day:7'];
 
     protected async parseInput(test: boolean): Promise<Input> {
         const file = test ? 'testinput' : 'input';

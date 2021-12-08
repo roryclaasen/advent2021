@@ -12,7 +12,7 @@ type Line = {
 type Input = Line[];
 
 export default class Day8Challenge extends AdventCommand<Input> {
-    static aliases = ['day8', 'day:8'];
+    static aliases = ['day:8'];
 
     protected async parseInput(test: boolean): Promise<Input> {
         const file = test ? 'testinput' : 'input';
