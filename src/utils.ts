@@ -13,3 +13,11 @@ export const parseFile = (file: string) => {
 };
 
 export const splitLines = (data: string) => data.split(/\n/);
+
+export const getByValue = <K, V>(map: Map<K, V>, searchValue: V): K => {
+    for (const [key, value] of map.entries()) {
+        if (value === searchValue) return key;
+    }
+
+    return undefined;
+};
