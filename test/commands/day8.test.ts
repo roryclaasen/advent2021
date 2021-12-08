@@ -3,7 +3,7 @@ import { expect, test } from '@oclif/test';
 import { answerString } from '../helpers/answer';
 
 describe('day8', () => {
-    const PART1_ANSWER = answerString(1, 288);
+    const PART1_ANSWER = answerString(1, 26);
     const PART2_ANSWER = answerString(2, 61_229);
 
     test.stdout()
