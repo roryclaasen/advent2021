@@ -1,3 +1,18 @@
+# [2.0.0](https://github.com/roryclaasen/advent2021/compare/v1.6.1...v2.0.0) (2021-12-08)
+
+
+### Breaking
+
+* Changes default command to lowercase ([0bcfa06](https://github.com/roryclaasen/advent2021/commit/0bcfa0646406718be2785357c98c23cd078c6dc0))
+
+### Fix
+
+* Tests should use correct part1 answer ([432a30a](https://github.com/roryclaasen/advent2021/commit/432a30a491f7328ffea7432215a9de4d7dbaee04))
+
+### New
+
+* Adds day 8 completed challenge ([ce66834](https://github.com/roryclaasen/advent2021/commit/ce66834605089d4644c18c913d6a674147dbf68a))
+
 ## [1.6.1](https://github.com/roryclaasen/advent2021/compare/v1.6.0...v1.6.1) (2021-12-07)
 
 
