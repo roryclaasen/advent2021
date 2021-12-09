@@ -19,3 +19,6 @@ indent_size = 2
 [{input,testinput*}]
 insert_final_newline = false
 trim_trailing_whitespace = false
+
+[{run,dev}]
+end_of_line = lf

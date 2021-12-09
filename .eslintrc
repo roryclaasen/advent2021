@@ -3,6 +3,7 @@
   "parser": "@typescript-eslint/parser",
   "extends": ["oclif", "oclif-typescript", "plugin:prettier/recommended", "prettier"],
   "plugins": ["@typescript-eslint/eslint-plugin", "prettier"],
+  "ignorePatterns": ["bin/*"],
   "overrides": [
     {
       "files": ["*.ts"],

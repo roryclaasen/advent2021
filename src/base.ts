@@ -1,7 +1,7 @@
 import cli from 'cli-ux';
 import { cloneDeep } from 'lodash';
 
-import { Command, flags } from '@oclif/command';
+import { Command, Flags } from '@oclif/core';
 
 type ComputeAnswer<T> = {
     part: number;
@@ -42,16 +42,17 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
     }
 
     public static flags = {
-        part: flags.integer({ char: 'p', description: 'Part to run', options: ['1', '2'] }),
-        test: flags.boolean({ char: 't', description: 'Run using test data' })
+        part: Flags.integer({ char: 'p', description: 'Part to run', options: ['1', '2'] }),
+        test: Flags.boolean({ char: 't', description: 'Run using test data' })
     };
 
     public async run(): Promise<void> {
-        const { flags } = this.parse(AdventCommand);
-
-        cli.action.start('Processing challenge');
         try {
+            cli.action.start('Processing challenge');
+
+            const { flags } = await this.parse(AdventCommand);
             const result = await this.compute(flags.test, flags.part);
+
             cli.action.stop();
 
             for (const { part, answer } of result) {

@@ -9,7 +9,9 @@
   "files.associations": {
     "input": "plaintext",
     "testinput": "plaintext",
-    ".releaserc": "json"
+    ".releaserc": "json",
+    "run": "javascript",
+    "dev": "javascript"
   },
   "files.exclude": {
     "**/.git": true,
