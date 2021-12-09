@@ -46,7 +46,7 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
         test: flags.boolean({ char: 't', description: 'Run using test data' })
     };
 
-    public async run() {
+    public async run(): Promise<void> {
         const { flags } = this.parse(AdventCommand);
 
         cli.action.start('Processing challenge');

@@ -65,19 +65,19 @@ export default class Day9Challenge extends AdventCommand<Input> {
 
         included.set(stringify(point), true);
 
-        if (!included.has(stringify({ x: point.x, y: point.y - 1 }))) {
+        if (!included.has(stringify<Point>({ x: point.x, y: point.y - 1 }))) {
             included = this.findArea(input, { x: point.x, y: point.y - 1 }, included);
         }
 
-        if (!included.has(stringify({ x: point.x, y: point.y + 1 }))) {
+        if (!included.has(stringify<Point>({ x: point.x, y: point.y + 1 }))) {
             included = this.findArea(input, { x: point.x, y: point.y + 1 }, included);
         }
 
-        if (!included.has(stringify({ x: point.x - 1, y: point.y }))) {
+        if (!included.has(stringify<Point>({ x: point.x - 1, y: point.y }))) {
             included = this.findArea(input, { x: point.x - 1, y: point.y }, included);
         }
 
-        if (!included.has(stringify({ x: point.x + 1, y: point.y }))) {
+        if (!included.has(stringify<Point>({ x: point.x + 1, y: point.y }))) {
             included = this.findArea(input, { x: point.x + 1, y: point.y }, included);
         }
 

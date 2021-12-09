@@ -37,7 +37,7 @@ export default class Day4Challenge extends AdventCommand<Input> {
         };
     }
 
-    private updateBoard(board: BingoBoard, value: number) {
+    private updateBoard(board: BingoBoard, value: number): void {
         for (let y = 0; y < HEIGHT; y++) {
             for (let x = 0; x < WIDTH; x++) {
                 if (board[y][x].value === value) {
@@ -47,7 +47,7 @@ export default class Day4Challenge extends AdventCommand<Input> {
         }
     }
 
-    private hasBoardWon(board: BingoBoard) {
+    private hasBoardWon(board: BingoBoard): boolean {
         for (let y = 0; y < HEIGHT; y++) {
             let row = true;
             for (let x = 0; x < WIDTH; x++) {
