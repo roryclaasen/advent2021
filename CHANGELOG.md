@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/roryclaasen/advent2021/compare/v2.0.0...v2.1.0) (2021-12-09)
+
+
+### New
+
+* Adds day 9 completed challenge ([247ad65](https://github.com/roryclaasen/advent2021/commit/247ad65f72a43d1073b04adda3e96ab9c97000f7))
+
 # [2.0.0](https://github.com/roryclaasen/advent2021/compare/v1.6.1...v2.0.0) (2021-12-08)
 
 
