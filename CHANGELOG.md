@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/roryclaasen/advent2021/compare/v2.1.0...v2.2.0) (2021-12-09)
+
+
+### Update
+
+* Changes license to MIT ([4b5b3ed](https://github.com/roryclaasen/advent2021/commit/4b5b3ed0f82aa08855d8022fd3a6c84c1ea401bc))
+
 # [2.1.0](https://github.com/roryclaasen/advent2021/compare/v2.0.0...v2.1.0) (2021-12-09)
 
 
