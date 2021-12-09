@@ -1,5 +1,4 @@
 import { sum, toNumber } from 'lodash';
-import path from 'path';
 
 import AdventCommand from '../../base';
 import { parseFile } from '../../utils';
@@ -23,8 +22,7 @@ export default class Day4Challenge extends AdventCommand<Input> {
     static aliases = ['day:4'];
 
     protected async parseInput(test: boolean): Promise<Input> {
-        const file = test ? 'testinput' : 'input';
-        const data = await parseFile(path.resolve(__dirname, file));
+        const data = await parseFile(test ? 'testinput' : 'input', __dirname);
         const parts = data.split(/\n{2}/);
         return {
             series: parts[0].split(/,/).map(toNumber),

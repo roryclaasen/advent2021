@@ -1,5 +1,4 @@
 import { sum, toNumber } from 'lodash';
-import path from 'path';
 
 import AdventCommand from '../../base';
 import { parseFile, splitLines, stringify } from '../../utils';
@@ -11,8 +10,7 @@ export default class Day9Challenge extends AdventCommand<Input> {
     static aliases = ['day:9'];
 
     protected async parseInput(test: boolean): Promise<Input> {
-        const file = test ? 'testinput' : 'input';
-        const data = await parseFile(path.resolve(__dirname, file));
+        const data = await parseFile(test ? 'testinput' : 'input', __dirname);
         return splitLines(data).map((line) => [...line].map(toNumber));
     }
 

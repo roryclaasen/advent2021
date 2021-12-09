@@ -1,5 +1,3 @@
-import path from 'path';
-
 import AdventCommand from '../../base';
 import { parseFile, splitLines } from '../../utils';
 
@@ -9,8 +7,7 @@ export default class Day3Challenge extends AdventCommand {
     static aliases = ['day:3'];
 
     protected async parseInput(test: boolean): Promise<string[]> {
-        const file = test ? 'testinput' : 'input';
-        const data = await parseFile(path.resolve(__dirname, file));
+        const data = await parseFile(test ? 'testinput' : 'input', __dirname);
         return splitLines(data);
     }
 

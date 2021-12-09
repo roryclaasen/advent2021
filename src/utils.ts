@@ -1,8 +1,10 @@
 import { readFile } from 'fs';
+import path from 'path';
 
-export const parseFile = (file: string) => {
+export const parseFile = (file: string, directory?: string) => {
+    const filePath = directory ? path.resolve(directory, file) : file;
     return new Promise<string>((resolve, reject) => {
-        readFile(file, 'utf8', (err, data) => {
+        readFile(filePath, 'utf8', (err, data) => {
             if (err) {
                 reject(err);
             } else {

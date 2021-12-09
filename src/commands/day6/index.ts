@@ -1,5 +1,4 @@
 import { sum, toNumber } from 'lodash';
-import path from 'path';
 
 import AdventCommand from '../../base';
 import { parseFile } from '../../utils';
@@ -10,8 +9,7 @@ export default class Day6Challenge extends AdventCommand<Input> {
     static aliases = ['day:6'];
 
     protected async parseInput(test: boolean): Promise<Input> {
-        const file = test ? 'testinput' : 'input';
-        const data = await parseFile(path.resolve(__dirname, file));
+        const data = await parseFile(test ? 'testinput' : 'input', __dirname);
         const allFish = data.split(',').map(toNumber);
 
         const fishMap = new Map<number, number>();
