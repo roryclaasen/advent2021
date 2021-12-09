@@ -21,3 +21,5 @@ export const getByValue = <K, V>(map: Map<K, V>, searchValue: V): K => {
 
     return undefined;
 };
+
+export const stringify = (data: any) => JSON.stringify(data);
