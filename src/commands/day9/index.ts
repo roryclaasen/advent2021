@@ -1,9 +1,9 @@
 import { sum, toNumber } from 'lodash';
 
 import AdventCommand from '../../base';
+import { Point } from '../../types';
 import { parseFile, splitLines, stringify } from '../../utils';
 
-type Point = { x: number; y: number };
 type Input = number[][];
 
 export default class Day9Challenge extends AdventCommand<Input> {
