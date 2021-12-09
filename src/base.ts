@@ -3,7 +3,7 @@ import { cloneDeep } from 'lodash';
 
 import { Command, flags } from '@oclif/command';
 
-type Answer<T> = {
+type ComputeAnswer<T> = {
     part: number;
     answer: T;
 };
@@ -15,10 +15,10 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
 
     protected abstract part2(input: TInput): TAnswer;
 
-    private async compute(test: boolean, part: number): Promise<Answer<TAnswer>[]> {
+    private async compute(test: boolean, part: number): Promise<ComputeAnswer<TAnswer>[]> {
         const input = await this.parseInput(test);
 
-        const answers: Answer<TAnswer>[] = [];
+        const answers: ComputeAnswer<TAnswer>[] = [];
 
         switch (part) {
             case 1: {
@@ -53,7 +53,10 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
         try {
             const result = await this.compute(flags.test, flags.part);
             cli.action.stop();
-            this.logAnswer(result);
+
+            for (const { part, answer } of result) {
+                this.log(`Part ${part} Answer: ${answer}`);
+            }
         } catch (error) {
             cli.action.stop('failed');
             if (error instanceof Error || typeof error === 'string') {
@@ -61,12 +64,6 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
             } else {
                 cli.error('Unknown error occurred');
             }
-        }
-    }
-
-    private logAnswer(answer: Answer<TAnswer>[]) {
-        for (const [, value] of answer.entries()) {
-            this.log(`Part ${value.part} Answer: ${value.answer}`);
         }
     }
 }
