@@ -22,8 +22,11 @@ export default class Day10Challenge extends AdventCommand<Input> {
             } else if (this.closing.includes(char)) {
                 if (stack[stack.length - 1] === this.opening[this.closing.indexOf(char)]) {
                     stack.pop();
-                } else if (onError) {
-                    onError(char);
+                } else {
+                    if (onError) {
+                        onError(char);
+                    }
+
                     break;
                 }
             } else {
