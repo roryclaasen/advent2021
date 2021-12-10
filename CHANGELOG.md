@@ -1,3 +1,26 @@
+# [2.3.0](https://github.com/roryclaasen/advent2021/compare/v2.2.0...v2.3.0) (2021-12-10)
+
+
+### Build
+
+* Adds lint step ([60eaaf7](https://github.com/roryclaasen/advent2021/commit/60eaaf7a480da9b9d6cba72c8683a0633fb30b42))
+
+### Chore
+
+* adds return types to all methods ([ffb5e92](https://github.com/roryclaasen/advent2021/commit/ffb5e929c95a89bafab66b33f7686090f60637af))
+* moves 'path' import to base.ts ([3a3a9f4](https://github.com/roryclaasen/advent2021/commit/3a3a9f4947035e56022f61a3117488fcfff4ef9b))
+* Removes unnecessary method ([55fd8f0](https://github.com/roryclaasen/advent2021/commit/55fd8f096511672ed96b48bc25f024a4cd36f005))
+* shares the Point type between classes ([7709702](https://github.com/roryclaasen/advent2021/commit/7709702e578e649c2dcfca86286a3954ed2bdf1a))
+* Updates '@oclif/core' to latest ([d137067](https://github.com/roryclaasen/advent2021/commit/d1370674af5f5a8a0e1d29427b01c75b90492b2b))
+
+### Fix
+
+* Reverts back to @oclif/dev-cli ([af89e11](https://github.com/roryclaasen/advent2021/commit/af89e1169255e86666c4fdde7b799db84f9b66f0))
+
+### New
+
+* Adds day 10 completed challenge ([58c1e19](https://github.com/roryclaasen/advent2021/commit/58c1e195af6f4d6bae503d8ab9ba7a6ac945fb98))
+
 # [2.2.0](https://github.com/roryclaasen/advent2021/compare/v2.1.0...v2.2.0) (2021-12-09)
 
 
