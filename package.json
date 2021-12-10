@@ -19,14 +19,15 @@
   },
   "homepage": "https://github.com/roryclaasen/advent2021#readme",
   "dependencies": {
-    "@oclif/core": "^1.0.10",
     "@oclif/config": "^1.18.2",
+    "@oclif/core": "^1.0.10",
     "@oclif/plugin-help": "^3.2.15",
     "cli-ux": "^6.0.6",
     "lodash": "^4.17.21",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
+    "@oclif/dev-cli": "^1.26.9",
     "@oclif/test": "^2.0.3",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
@@ -71,8 +72,8 @@
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "build": "rimraf lib && tsc -b",
     "postpack": "rimraf oclif.manifest.json",
-    "prepack": "npm run build && oclif manifest && oclif readme",
-    "version": "oclif readme && git add README.md"
+    "prepack": "npm run build && oclif-dev manifest && oclif-dev readme",
+    "version": "oclif-dev readme && git add README.md"
   },
   "types": "lib/index.d.ts",
   "publishConfig": {
