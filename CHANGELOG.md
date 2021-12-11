@@ -1,3 +1,14 @@
+# [2.4.0](https://github.com/roryclaasen/advent2021/compare/v2.3.0...v2.4.0) (2021-12-11)
+
+
+### Chore
+
+* allows for break when onError undefined ([9e5b84c](https://github.com/roryclaasen/advent2021/commit/9e5b84ce2180ec36e14449a1340113c5fdc2f9f9))
+
+### New
+
+* Adds day 11 completed challenge ([87df02e](https://github.com/roryclaasen/advent2021/commit/87df02ed3b0cabaee2197542586f4a520bda49da))
+
 # [2.3.0](https://github.com/roryclaasen/advent2021/compare/v2.2.0...v2.3.0) (2021-12-10)
 
 
