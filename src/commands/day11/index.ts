@@ -37,10 +37,10 @@ export default class Day11Challenge extends AdventCommand<Input> {
                     oct.energy = 0;
                     oct.flashed = false;
                 }
+
+                oct.energy++;
             }
         }
-
-        for (const row of input) for (const oct of row) oct.energy++;
 
         do {
             for (let y = 0; y < input.length; y++) {
