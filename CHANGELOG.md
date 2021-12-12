@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/roryclaasen/advent2021/compare/v2.5.1...v2.6.0) (2021-12-12)
+
+
+### Update
+
+* Refactors day12 into one method ([608c5c8](https://github.com/roryclaasen/advent2021/commit/608c5c89ce7d8d72a6bbd9e45eacf7dde5f55d4d))
+
 ## [2.5.1](https://github.com/roryclaasen/advent2021/compare/v2.5.0...v2.5.1) (2021-12-12)
 
 
