@@ -1,3 +1,16 @@
+# [2.5.0](https://github.com/roryclaasen/advent2021/compare/v2.4.0...v2.5.0) (2021-12-12)
+
+
+### Chore
+
+* Moves line in day11 into existing loop ([2de041d](https://github.com/roryclaasen/advent2021/commit/2de041db5f60f4f0f8598a4b67aeffbedaa5bc7f))
+* Refactors day11 ([211d8dc](https://github.com/roryclaasen/advent2021/commit/211d8dc9996b57c379634c28c0d5edc41f4aa1f2))
+
+### New
+
+* Adds day 12 completed challenge ([9588ca9](https://github.com/roryclaasen/advent2021/commit/9588ca93303392c792be34890b41f7b79fbe7ed3))
+* Adds performance time to output ([f26e9ed](https://github.com/roryclaasen/advent2021/commit/f26e9ed2ee46af2940d38e8416b546bd26a6fef0))
+
 # [2.4.0](https://github.com/roryclaasen/advent2021/compare/v2.3.0...v2.4.0) (2021-12-11)
 
 
