@@ -1,5 +1,6 @@
 import cli from 'cli-ux';
 import { cloneDeep } from 'lodash';
+import { performance } from 'perf_hooks';
 
 import { Command, Flags } from '@oclif/core';
 
@@ -15,25 +16,40 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
 
     protected abstract part2(input: TInput): TAnswer;
 
+    private computeAnswer(part: number, task: () => TAnswer): ComputeAnswer<TAnswer> {
+        cli.action.start(`Processing part ${part}`, '', { stdout: true });
+        const start = performance.now();
+        const answer = task();
+        const end = performance.now();
+        cli.action.stop('done. Took ' + (end - start).toFixed(2) + 'ms');
+
+        return { part, answer };
+    }
+
     private async compute(test: boolean, part: number): Promise<ComputeAnswer<TAnswer>[]> {
+        cli.action.start(`Reading input`, '', { stdout: true });
         const input = await this.parseInput(test);
+        cli.action.stop();
 
         const answers: ComputeAnswer<TAnswer>[] = [];
 
         switch (part) {
             case 1: {
-                answers.push({ part: 1, answer: this.part1(input) });
+                answers.push(this.computeAnswer(1, () => this.part1(input)));
                 break;
             }
 
             case 2: {
-                answers.push({ part: 2, answer: this.part2(input) });
+                answers.push(this.computeAnswer(2, () => this.part2(input)));
                 break;
             }
 
             default: {
                 const input2 = cloneDeep(input);
-                answers.push({ part: 1, answer: this.part1(input) }, { part: 2, answer: this.part2(input2) });
+                answers.push(
+                    this.computeAnswer(1, () => this.part1(input)),
+                    this.computeAnswer(2, () => this.part2(input2))
+                );
                 break;
             }
         }
@@ -48,13 +64,10 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
 
     public async run(): Promise<void> {
         try {
-            cli.action.start('Processing challenge');
-
             const { flags } = await this.parse(AdventCommand);
             const result = await this.compute(flags.test, flags.part);
 
-            cli.action.stop();
-
+            this.log('');
             for (const { part, answer } of result) {
                 this.log(`Part ${part} Answer: ${answer}`);
             }

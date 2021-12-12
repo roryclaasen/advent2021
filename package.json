@@ -78,5 +78,8 @@
   "types": "lib/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
