@@ -1,3 +1,10 @@
+## [2.5.1](https://github.com/roryclaasen/advent2021/compare/v2.5.0...v2.5.1) (2021-12-12)
+
+
+### Fix
+
+* lowers valid node version to 12.x ([2ae139a](https://github.com/roryclaasen/advent2021/commit/2ae139afb597adf2995c6d79830fc525392dff86))
+
 # [2.5.0](https://github.com/roryclaasen/advent2021/compare/v2.4.0...v2.5.0) (2021-12-12)
 
 
