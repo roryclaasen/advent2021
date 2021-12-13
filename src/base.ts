@@ -9,14 +9,14 @@ type ComputeAnswer<T> = {
     answer: T;
 };
 
-export default abstract class AdventCommand<TInput = string[], TAnswer = number> extends Command {
+export default abstract class AdventCommand<TInput = string[], TAnswer1 = number, TAnswer2 = TAnswer1> extends Command {
     protected abstract parseInput(test: boolean): Promise<TInput>;
 
-    protected abstract part1(input: TInput): TAnswer;
+    protected abstract part1(input: TInput): TAnswer1;
 
-    protected abstract part2(input: TInput): TAnswer;
+    protected abstract part2(input: TInput): TAnswer2;
 
-    private computeAnswer(part: number, task: () => TAnswer): ComputeAnswer<TAnswer> {
+    private computeAnswer(part: number, task: () => TAnswer1 | TAnswer2): ComputeAnswer<TAnswer1 | TAnswer2> {
         cli.action.start(`Processing part ${part}`, '', { stdout: true });
         const start = performance.now();
         const answer = task();
@@ -26,12 +26,12 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
         return { part, answer };
     }
 
-    private async compute(test: boolean, part: number): Promise<ComputeAnswer<TAnswer>[]> {
+    private async compute(test: boolean, part: number): Promise<ComputeAnswer<TAnswer1 | TAnswer2>[]> {
         cli.action.start(`Reading input`, '', { stdout: true });
         const input = await this.parseInput(test);
         cli.action.stop();
 
-        const answers: ComputeAnswer<TAnswer>[] = [];
+        const answers: ComputeAnswer<TAnswer1 | TAnswer2>[] = [];
 
         switch (part) {
             case 1: {
@@ -69,6 +69,13 @@ export default abstract class AdventCommand<TInput = string[], TAnswer = number>
 
             this.log('');
             for (const { part, answer } of result) {
+                if (typeof answer === 'string') {
+                    if (answer.includes('\n')) {
+                        this.log(`Part ${part} Answer: \n${answer}`);
+                        continue;
+                    }
+                }
+
                 this.log(`Part ${part} Answer: ${answer}`);
             }
         } catch (error) {
