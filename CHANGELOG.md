@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/roryclaasen/advent2021/compare/v2.6.0...v2.7.0) (2021-12-13)
+
+
+### New
+
+* Adds day 13 completed challenge ([17d2ad3](https://github.com/roryclaasen/advent2021/commit/17d2ad3247772578c38b16978090a2fd72cada85))
+
 # [2.6.0](https://github.com/roryclaasen/advent2021/compare/v2.5.1...v2.6.0) (2021-12-12)
 
 
