@@ -11,18 +11,15 @@ export default class Day14Challenge extends AdventCommand<Input> {
 
     protected async parseInput(test: boolean): Promise<Input> {
         const data = await parseFile(test ? 'testinput' : 'input', __dirname);
-        const [template, pairs] = data.split('\n\n').map(splitLines);
-        const map = new Map<string, string>();
+        const [polymer, pairs] = data.split('\n\n');
 
-        for (const pair of pairs) {
+        const rules = new Map<string, string>();
+        for (const pair of splitLines(pairs)) {
             const [key, value] = pair.split(' -> ');
-            map.set(key, value);
+            rules.set(key, value);
         }
 
-        return {
-            polymer: template[0],
-            rules: map
-        };
+        return { polymer, rules };
     }
 
     private solve({ polymer, rules }: Input, steps: number): number {
