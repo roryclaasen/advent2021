@@ -1,3 +1,14 @@
+# [2.8.0](https://github.com/roryclaasen/advent2021/compare/v2.7.0...v2.8.0) (2021-12-14)
+
+
+### Chore
+
+* Deconstruct's input parameters if possible ([81794d6](https://github.com/roryclaasen/advent2021/commit/81794d6289879a9b5d6e58b9c410cb4a1e639332))
+
+### New
+
+* Adds day 14 completed challenge ([14f6602](https://github.com/roryclaasen/advent2021/commit/14f66024b5d36744d9e5fd0cd027293a35850b12))
+
 # [2.7.0](https://github.com/roryclaasen/advent2021/compare/v2.6.0...v2.7.0) (2021-12-13)
 
 
