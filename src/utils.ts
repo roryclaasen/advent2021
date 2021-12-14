@@ -25,3 +25,11 @@ export const getByValue = <K, V>(map: Map<K, V>, searchValue: V): K => {
 };
 
 export const stringify = <T = any>(data: T): string => JSON.stringify(data);
+
+export const incrementMap = (map: Map<string, number>, key: string, ammount = 1) => {
+    if (!map.has(key)) {
+        map.set(key, 0);
+    }
+
+    map.set(key, map.get(key) + ammount);
+};
