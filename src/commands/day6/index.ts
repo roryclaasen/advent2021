@@ -1,7 +1,7 @@
 import { sum, toNumber } from 'lodash';
 
 import AdventCommand from '../../base';
-import { parseFile } from '../../utils';
+import { incrementMap, parseFile } from '../../utils';
 
 type Input = Map<number, number>;
 
@@ -14,11 +14,7 @@ export default class Day6Challenge extends AdventCommand<Input> {
 
         const fishMap = new Map<number, number>();
         for (const fish of allFish) {
-            if (!fishMap.has(fish)) {
-                fishMap.set(fish, 0);
-            }
-
-            fishMap.set(fish, fishMap.get(fish) + 1);
+            incrementMap(fishMap, fish);
         }
 
         return fishMap;
