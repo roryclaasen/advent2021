@@ -2,6 +2,7 @@ import AdventCommand from '../../base';
 import { parseFile, splitLines } from '../../utils';
 
 type Input = string[];
+
 export default class Day10Challenge extends AdventCommand<Input> {
     private readonly opening = ['(', '[', '{', '<'];
     private readonly closing = [')', ']', '}', '>'];

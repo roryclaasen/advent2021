@@ -3,15 +3,17 @@ import { parseFile, splitLines } from '../../utils';
 
 type BinaryNumber = '0' | '1';
 
-export default class Day3Challenge extends AdventCommand {
+type Input = string[];
+
+export default class Day3Challenge extends AdventCommand<Input> {
     static aliases = ['day:3'];
 
-    protected async parseInput(test: boolean): Promise<string[]> {
+    protected async parseInput(test: boolean): Promise<Input> {
         const data = await parseFile(test ? 'testinput' : 'input', __dirname);
         return splitLines(data);
     }
 
-    protected part1(input: string[]): number {
+    protected part1(input: Input): number {
         const results: {
             [key: string]: number;
         }[] = [];
@@ -48,7 +50,7 @@ export default class Day3Challenge extends AdventCommand {
         return gamma * epsilon;
     }
 
-    protected part2(input: string[]): number {
+    protected part2(input: Input): number {
         const findNumber = (match: (bit1Count: number, bit0Count: number) => BinaryNumber) => {
             let position = 0;
             let data = [...input];

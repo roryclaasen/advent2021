@@ -53,15 +53,15 @@ export default class Day13Challenge extends AdventCommand<Input, number, string>
         return image.map((line) => line.join('')).join('\n');
     }
 
-    protected part1(input: Input): number {
-        return this.fold(input.points, input.folds[0]).length;
+    protected part1({ points, folds }: Input): number {
+        return this.fold(points, folds[0]).length;
     }
 
-    protected part2(input: Input): string {
-        for (const fold of input.folds) {
-            input.points = this.fold(input.points, fold);
+    protected part2({ points, folds }: Input): string {
+        for (const fold of folds) {
+            points = this.fold(points, fold);
         }
 
-        return this.render(input.points);
+        return this.render(points);
     }
 }

@@ -88,13 +88,13 @@ export default class Day4Challenge extends AdventCommand<Input> {
         return sum(winnerValues) * winningMove;
     }
 
-    protected part1(input: Input): number {
+    protected part1({ series, boards }: Input): number {
         let currentPicked: number;
         let winner: BingoBoard;
-        for (const picked of input.series) {
+        for (const picked of series) {
             currentPicked = picked;
 
-            for (const board of input.boards) {
+            for (const board of boards) {
                 this.updateBoard(board, picked);
                 if (this.hasBoardWon(board)) {
                     winner = board;
@@ -114,11 +114,11 @@ export default class Day4Challenge extends AdventCommand<Input> {
         return this.calculateScore(winner, currentPicked);
     }
 
-    protected part2(input: Input): number {
+    protected part2({ series, boards }: Input): number {
         let lastWinner = -1;
 
-        for (const picked of input.series) {
-            for (const board of input.boards) {
+        for (const picked of series) {
+            for (const board of boards) {
                 if (this.hasBoardWon(board)) {
                     continue;
                 }
