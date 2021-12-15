@@ -1,7 +1,7 @@
 import { toNumber } from 'lodash';
 
 import AdventCommand from '../../base';
-import { Point } from '../../types';
+import { Point } from '../../point';
 import { parseFile, splitLines } from '../../utils';
 
 type Line = {

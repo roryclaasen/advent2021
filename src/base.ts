@@ -21,7 +21,8 @@ export default abstract class AdventCommand<TInput = string[], TAnswer1 = number
         const start = performance.now();
         const answer = task();
         const end = performance.now();
-        cli.action.stop('done. Took ' + (end - start).toFixed(2) + 'ms');
+        const duration = end - start;
+        cli.action.stop('done. Took ' + (duration > 1000 ? (duration / 1000).toFixed(2) + 's' : duration.toFixed(2) + 'ms'));
 
         return { part, answer };
     }

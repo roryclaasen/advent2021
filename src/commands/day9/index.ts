@@ -1,7 +1,7 @@
 import { sum, toNumber } from 'lodash';
 
 import AdventCommand from '../../base';
-import { Point } from '../../types';
+import { Point } from '../../point';
 import { parseFile, splitLines, stringify } from '../../utils';
 
 type Input = number[][];
