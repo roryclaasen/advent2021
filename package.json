@@ -64,8 +64,8 @@
     "/oclif.manifest.json"
   ],
   "oclif": {
-    "commands": "./dist/commands",
     "bin": "advent2021",
+    "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help"
     ]
