@@ -20,5 +20,13 @@
     "unicorn/prefer-node-protocol": "off",
     "unicorn/no-array-callback-reference": "off",
     "unicorn/no-lonely-if": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }
