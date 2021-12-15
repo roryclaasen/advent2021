@@ -1,3 +1,20 @@
+# [2.10.0](https://github.com/roryclaasen/advent2021/compare/v2.9.0...v2.10.0) (2021-12-15)
+
+
+### Chore
+
+* refactors bottomLeft in day15 to make a bit more sense ([c08f258](https://github.com/roryclaasen/advent2021/commit/c08f2582b04515bde2d5ce83aadd6d6a3b6cda16))
+* removes extra function in day15 ([c9fa938](https://github.com/roryclaasen/advent2021/commit/c9fa938ac92dc1c6c20cb7621718c9536d696de1))
+
+### Fix
+
+* Adds input files to build directory ([bd3653e](https://github.com/roryclaasen/advent2021/commit/bd3653e3ef68d73f1475cecbdedab986fa0c252b))
+* Fixes tests from not using typescript paths ([5c4e7fc](https://github.com/roryclaasen/advent2021/commit/5c4e7fca4a23316e454aa19e1488a79d23708c7f))
+
+### Update
+
+* Refactors code to use typescript paths ([1c159f0](https://github.com/roryclaasen/advent2021/commit/1c159f0b6800960f4ee441215a492f6cabae11e3))
+
 # [2.9.0](https://github.com/roryclaasen/advent2021/compare/v2.8.0...v2.9.0) (2021-12-15)
 
 
