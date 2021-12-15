@@ -29,7 +29,7 @@ export default class Day15Challenge extends AdventCommand<Input> {
         };
     }
 
-    private solve({ riskMap, size }: Input): number {
+    protected part1({ riskMap, size }: Input): number {
         const topLeft: Point = { x: 0, y: 0 };
         const bottomRight: Point = { x: size.x - 1, y: size.y - 1 };
 
@@ -59,10 +59,6 @@ export default class Day15Challenge extends AdventCommand<Input> {
         return totalRiskMap.get(bottomRight);
     }
 
-    protected part1(input: Input): number {
-        return this.solve(input);
-    }
-
     protected part2({ riskMap: input, size }: Input): number {
         const res = new PointMap<number>();
         for (let y = 0; y < size.y * 5; y++) {
@@ -74,7 +70,7 @@ export default class Day15Challenge extends AdventCommand<Input> {
             }
         }
 
-        return this.solve({
+        return this.part1({
             riskMap: res,
             size: { x: size.x * 5, y: size.y * 5 }
         });
