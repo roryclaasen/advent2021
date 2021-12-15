@@ -1,7 +1,7 @@
 import { toNumber } from 'lodash';
 
 import AdventCommand from '../../base';
-import { Point, PointMap } from '../../point';
+import { getNeighbors, Point, PointMap } from '../../point';
 import { priorityQueue } from '../../priority-queue';
 import { parseFile, splitLines } from '../../utils';
 
@@ -29,15 +29,6 @@ export default class Day15Challenge extends AdventCommand<Input> {
         };
     }
 
-    private getNeighbors(point: Point): Point[] {
-        return [
-            { x: point.x - 1, y: point.y },
-            { x: point.x + 1, y: point.y },
-            { x: point.x, y: point.y - 1 },
-            { x: point.x, y: point.y + 1 }
-        ];
-    }
-
     private solve({ riskMap, size: bottomRight }: Input): number {
         const topLeft: Point = { x: 0, y: 0 };
 
@@ -50,7 +41,7 @@ export default class Day15Challenge extends AdventCommand<Input> {
         while (!queue.isEmpty()) {
             const p = queue.pop();
 
-            for (const n of this.getNeighbors(p)) {
+            for (const n of getNeighbors(p)) {
                 if (riskMap.has(n) && !totalRiskMap.has(n)) {
                     const totalRisk = totalRiskMap.get(p) + riskMap.get(n);
                     totalRiskMap.set(n, totalRisk);

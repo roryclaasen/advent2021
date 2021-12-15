@@ -1,8 +1,8 @@
 import { sum, toNumber } from 'lodash';
 
 import AdventCommand from '../../base';
-import { Point } from '../../point';
-import { parseFile, splitLines, stringify } from '../../utils';
+import { getNeighbors, Point, PointMap } from '../../point';
+import { parseFile, splitLines } from '../../utils';
 
 type Input = number[][];
 
@@ -46,16 +46,12 @@ export default class Day9Challenge extends AdventCommand<Input> {
         return sum(this.findLowPoints(input).map((point) => input[point.y][point.x] + 1));
     }
 
-    private findArea(input: Input, point: Point, included: Map<string, boolean> = new Map<string, boolean>()): Map<string, boolean> {
-        if (included.has(stringify(point))) {
+    private findArea(input: Input, point: Point, included: PointMap<boolean> = new PointMap<boolean>()): PointMap<boolean> {
+        if (included.has(point)) {
             return included;
         }
 
-        if (point.y < 0 || point.y >= input.length) {
-            return included;
-        }
-
-        if (point.x < 0 || point.x >= input[point.y].length) {
+        if (point.y < 0 || point.y >= input.length || point.x < 0 || point.x >= input[point.y].length) {
             return included;
         }
 
@@ -63,22 +59,10 @@ export default class Day9Challenge extends AdventCommand<Input> {
             return included;
         }
 
-        included.set(stringify(point), true);
+        included.set(point, true);
 
-        if (!included.has(stringify<Point>({ x: point.x, y: point.y - 1 }))) {
-            included = this.findArea(input, { x: point.x, y: point.y - 1 }, included);
-        }
-
-        if (!included.has(stringify<Point>({ x: point.x, y: point.y + 1 }))) {
-            included = this.findArea(input, { x: point.x, y: point.y + 1 }, included);
-        }
-
-        if (!included.has(stringify<Point>({ x: point.x - 1, y: point.y }))) {
-            included = this.findArea(input, { x: point.x - 1, y: point.y }, included);
-        }
-
-        if (!included.has(stringify<Point>({ x: point.x + 1, y: point.y }))) {
-            included = this.findArea(input, { x: point.x + 1, y: point.y }, included);
+        for (const neighbor of getNeighbors(point).filter((p) => !included.has(p))) {
+            included = this.findArea(input, neighbor, included);
         }
 
         return included;

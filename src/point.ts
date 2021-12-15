@@ -1,9 +1,9 @@
 import { stringify } from './utils';
 
-export interface Point {
+export type Point = {
     x: number;
     y: number;
-}
+};
 
 export class PointMap<V = any> {
     private map: Map<string, V>;
@@ -39,6 +39,17 @@ export class PointMap<V = any> {
     }
 }
 
-export const hasPoint = (map: Map<string, any>, point: Point): boolean => {
-    return map.has(stringify(point));
+export const getNeighbors = (point: Point, diagonal = false): Point[] => {
+    const direct = [
+        { x: point.x - 1, y: point.y },
+        { x: point.x + 1, y: point.y },
+        { x: point.x, y: point.y - 1 },
+        { x: point.x, y: point.y + 1 }
+    ];
+
+    if (!diagonal) {
+        return direct;
+    }
+
+    return [...direct, { x: point.x - 1, y: point.y - 1 }, { x: point.x + 1, y: point.y - 1 }, { x: point.x - 1, y: point.y + 1 }, { x: point.x + 1, y: point.y + 1 }];
 };
