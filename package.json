@@ -41,6 +41,7 @@
     "@typescript-eslint/parser": "^5.7.0",
     "chai": "^4.3.4",
     "conventional-changelog-eslint": "^3.0.9",
+    "copyfiles": "^2.4.1",
     "eslint": "^7.32.0",
     "eslint-config-oclif": "^4.0.0",
     "eslint-config-oclif-typescript": "^1.0.2",
@@ -75,7 +76,7 @@
     "dev": "node ./bin/dev",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "build": "rimraf dist && tsc -b && tscpaths -p tsconfig.json -s ./src -o ./dist",
+    "build": "rimraf dist && tsc -b && tscpaths -p tsconfig.json -s ./src -o ./dist && copyfiles -u 1 src/commands/**/input src/commands/**/testinput dist/",
     "postpack": "rimraf oclif.manifest.json",
     "prepack": "npm run build && oclif manifest && oclif readme",
     "version": "oclif readme && git add README.md"
