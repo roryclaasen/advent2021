@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/roryclaasen/advent2021#readme",
   "dependencies": {
-    "@oclif/config": "^1.18.2",
     "@oclif/core": "^1.0.10",
     "@oclif/plugin-help": "^3.2.15",
     "cli-ux": "^6.0.6",
