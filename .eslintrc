@@ -1,18 +1,24 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "extends": ["oclif", "oclif-typescript", "plugin:prettier/recommended", "prettier"],
-  "plugins": ["@typescript-eslint/eslint-plugin", "prettier"],
-  "ignorePatterns": ["bin/*"],
-  "overrides": [
-    {
-      "files": ["*.ts"],
-      "rules": {
-        "unicorn/prefer-module": "off",
-        "unicorn/prefer-node-protocol": "off",
-        "unicorn/no-array-callback-reference": "off",
-        "unicorn/no-lonely-if": "off"
+  "plugins": ["@typescript-eslint", "import"],
+  "extends": ["oclif", "oclif-typescript", "eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:import/recommended", "plugin:import/typescript", "prettier"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
       }
     }
-  ]
+  },
+  "rules": {
+    "node/no-missing-import": "off",
+    "import/no-unresolved": "error",
+    "unicorn/prefer-module": "off",
+    "unicorn/prefer-node-protocol": "off",
+    "unicorn/no-array-callback-reference": "off",
+    "unicorn/no-lonely-if": "off"
+  }
 }

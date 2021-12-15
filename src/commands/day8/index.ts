@@ -1,7 +1,8 @@
 import { difference, sum, toNumber, uniq } from 'lodash';
 
-import AdventCommand from '../../base';
-import { getByValue, parseFile, splitLines } from '../../utils';
+import AdventCommand from '~shared/advent-command';
+import { parseFile, splitLines } from '~shared/file';
+import { getByValue } from '~shared/map';
 
 type Line = {
     input: string[];

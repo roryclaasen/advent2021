@@ -1,5 +1,5 @@
-import AdventCommand from '../../base';
-import { parseFile, splitLines } from '../../utils';
+import AdventCommand from '~shared/advent-command';
+import { parseFile, splitLines } from '~shared/file';
 
 type Input = string[];
 

@@ -1,7 +1,8 @@
 import { sum, toNumber } from 'lodash';
 
-import AdventCommand from '../../base';
-import { incrementMap, parseFile } from '../../utils';
+import AdventCommand from '~shared/advent-command';
+import { parseFile } from '~shared/file';
+import { incrementMap } from '~shared/map';
 
 type Input = Map<number, number>;
 

@@ -1,5 +1,5 @@
-import AdventCommand from '../../base';
-import { parseFile, splitLines } from '../../utils';
+import AdventCommand from '~shared/advent-command';
+import { parseFile, splitLines } from '~shared/file';
 
 type BinaryNumber = '0' | '1';
 
@@ -51,7 +51,7 @@ export default class Day3Challenge extends AdventCommand<Input> {
     }
 
     protected part2(input: Input): number {
-        const findNumber = (match: (bit1Count: number, bit0Count: number) => BinaryNumber) => {
+        const findNumber = (match: (oneCount: number, zeroCount: number) => BinaryNumber) => {
             let position = 0;
             let data = [...input];
 
@@ -67,8 +67,8 @@ export default class Day3Challenge extends AdventCommand<Input> {
             return Number.parseInt(data[0], 2);
         };
 
-        const oxygen = findNumber((bit1Count, bit0Count) => (bit1Count >= bit0Count ? '1' : '0'));
-        const co2 = findNumber((bit1Count, bit0Count) => (bit1Count >= bit0Count ? '0' : '1'));
+        const oxygen = findNumber((oneCount, zeroCount) => (oneCount >= zeroCount ? '1' : '0'));
+        const co2 = findNumber((oneCount, zeroCount) => (oneCount >= zeroCount ? '0' : '1'));
         return oxygen * co2;
     }
 }

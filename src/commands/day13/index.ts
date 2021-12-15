@@ -1,8 +1,8 @@
 import { toNumber, uniqWith } from 'lodash';
 
-import AdventCommand from '../../base';
-import { Point } from '../../point';
-import { parseFile, splitLines } from '../../utils';
+import AdventCommand from '~shared/advent-command';
+import { parseFile, splitLines } from '~shared/file';
+import { Point } from '~shared/point';
 
 type Input = {
     points: Point[];

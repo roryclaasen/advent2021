@@ -1,12 +1,13 @@
 import { toNumber } from 'lodash';
 
-import AdventCommand from '../../base';
-import { getNeighbors, Point, PointMap } from '../../point';
-import { priorityQueue } from '../../priority-queue';
-import { parseFile, splitLines } from '../../utils';
+import AdventCommand from '~shared/advent-command';
+import { parseFile, splitLines } from '~shared/file';
+import ObjectMap from '~shared/map/object-map';
+import { getNeighbors, Point } from '~shared/point';
+import { priorityQueue } from '~shared/priority-queue';
 
 type Input = {
-    riskMap: PointMap<number>;
+    riskMap: ObjectMap<Point, number>;
     size: Point;
 };
 
@@ -16,7 +17,7 @@ export default class Day15Challenge extends AdventCommand<Input> {
     protected async parseInput(test: boolean): Promise<Input> {
         const data = await parseFile(test ? 'testinput' : 'input', __dirname);
         const grid = splitLines(data).map((line) => [...line].map(toNumber));
-        const riskMap = new PointMap<number>();
+        const riskMap = new ObjectMap<Point, number>();
         for (const [y, row] of grid.entries()) {
             for (const [x, risk] of row.entries()) {
                 riskMap.set({ x, y }, risk);
@@ -34,7 +35,7 @@ export default class Day15Challenge extends AdventCommand<Input> {
         const bottomRight: Point = { x: size.x - 1, y: size.y - 1 };
 
         const queue = priorityQueue<Point>();
-        const totalRiskMap = new PointMap<number>();
+        const totalRiskMap = new ObjectMap<Point, number>();
 
         totalRiskMap.set(topLeft, 0);
         queue.insert(topLeft, 0);
@@ -60,7 +61,7 @@ export default class Day15Challenge extends AdventCommand<Input> {
     }
 
     protected part2({ riskMap: input, size }: Input): number {
-        const res = new PointMap<number>();
+        const res = new ObjectMap<Point, number>();
         for (let y = 0; y < size.y * 5; y++) {
             for (let x = 0; x < size.x * 5; x++) {
                 const risk = input.get({ x: x % size.x, y: y % size.y });

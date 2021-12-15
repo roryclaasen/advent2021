@@ -1,5 +1,6 @@
-import AdventCommand from '../../base';
-import { incrementMap, parseFile, splitLines } from '../../utils';
+import AdventCommand from '~shared/advent-command';
+import { parseFile, splitLines } from '~shared/file';
+import { incrementMap } from '~shared/map';
 
 type Input = {
     polymer: string;

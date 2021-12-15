@@ -1,8 +1,9 @@
 import { sum, toNumber } from 'lodash';
 
-import AdventCommand from '../../base';
-import { getNeighbors, Point, PointMap } from '../../point';
-import { parseFile, splitLines } from '../../utils';
+import AdventCommand from '~shared/advent-command';
+import { parseFile, splitLines } from '~shared/file';
+import ObjectMap from '~shared/map/object-map';
+import { getNeighbors, Point } from '~shared/point';
 
 type Input = number[][];
 
@@ -46,7 +47,7 @@ export default class Day9Challenge extends AdventCommand<Input> {
         return sum(this.findLowPoints(input).map((point) => input[point.y][point.x] + 1));
     }
 
-    private findArea(input: Input, point: Point, included: PointMap<boolean> = new PointMap<boolean>()): PointMap<boolean> {
+    private findArea(input: Input, point: Point, included: ObjectMap<Point, boolean> = new ObjectMap<Point, boolean>()): ObjectMap<Point, boolean> {
         if (included.has(point)) {
             return included;
         }

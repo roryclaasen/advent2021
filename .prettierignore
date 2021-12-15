@@ -1,4 +1,6 @@
-/tmp
-/lib
+bin
+dist
+tmp
 oclif.manifest.json
+node_modules
 pnpm-lock.yaml

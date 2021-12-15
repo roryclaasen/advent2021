@@ -1,7 +1,7 @@
 import { toNumber } from 'lodash';
 
-import AdventCommand from '../../base';
-import { parseFile } from '../../utils';
+import AdventCommand from '~shared/advent-command';
+import { parseFile } from '~shared/file';
 
 type Input = number[];
 

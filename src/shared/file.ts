@@ -15,21 +15,3 @@ export const parseFile = (file: string, directory?: string): Promise<string> => 
 };
 
 export const splitLines = (data: string): string[] => data.split(/\n/);
-
-export const getByValue = <K, V>(map: Map<K, V>, searchValue: V): K => {
-    for (const [key, value] of map.entries()) {
-        if (value === searchValue) return key;
-    }
-
-    return undefined;
-};
-
-export const stringify = <T = any>(data: T): string => JSON.stringify(data);
-
-export const incrementMap = <TKey = string>(map: Map<TKey, number>, key: TKey, ammount = 1) => {
-    if (!map.has(key)) {
-        map.set(key, 0);
-    }
-
-    map.set(key, map.get(key) + ammount);
-};
