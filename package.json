@@ -22,7 +22,7 @@
   "homepage": "https://github.com/roryclaasen/advent2021#readme",
   "dependencies": {
     "@oclif/core": "^1.0.10",
-    "@oclif/plugin-help": "^3.2.15",
+    "@oclif/plugin-help": "^5.1.10",
     "cli-ux": "^6.0.6",
     "lodash": "^4.17.21",
     "tslib": "^2.3.1"
@@ -36,7 +36,7 @@
     "@semantic-release/npm": "^8.0.3",
     "@types/lodash": "^4.14.178",
     "@types/mocha": "^9.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "chai": "^4.3.4",
     "conventional-changelog-eslint": "^3.0.9",
