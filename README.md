@@ -16,7 +16,7 @@ $ npm install -g @roryclaasen/advent2021
 $ advent2021 COMMAND
 running command...
 $ advent2021 (-v|--version|version)
-@roryclaasen/advent2021/2.8.0 linux-x64 node-v16.13.1
+@roryclaasen/advent2021/2.9.0 linux-x64 node-v16.13.1
 $ advent2021 --help [COMMAND]
 USAGE
   $ advent2021 COMMAND
@@ -33,6 +33,7 @@ USAGE
 * [`advent2021 day12`](#advent2021-day12)
 * [`advent2021 day13`](#advent2021-day13)
 * [`advent2021 day14`](#advent2021-day14)
+* [`advent2021 day15`](#advent2021-day15)
 * [`advent2021 day2`](#advent2021-day2)
 * [`advent2021 day3`](#advent2021-day3)
 * [`advent2021 day4`](#advent2021-day4)
@@ -57,7 +58,7 @@ ALIASES
   $ advent2021 day:1
 ```
 
-_See code: [src/commands/day1/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day1/index.ts)_
+_See code: [src/commands/day1/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day1/index.ts)_
 
 ## `advent2021 day10`
 
@@ -73,7 +74,7 @@ ALIASES
   $ advent2021 day:10
 ```
 
-_See code: [src/commands/day10/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day10/index.ts)_
+_See code: [src/commands/day10/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day10/index.ts)_
 
 ## `advent2021 day11`
 
@@ -89,7 +90,7 @@ ALIASES
   $ advent2021 day:11
 ```
 
-_See code: [src/commands/day11/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day11/index.ts)_
+_See code: [src/commands/day11/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day11/index.ts)_
 
 ## `advent2021 day12`
 
@@ -105,7 +106,7 @@ ALIASES
   $ advent2021 day:12
 ```
 
-_See code: [src/commands/day12/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day12/index.ts)_
+_See code: [src/commands/day12/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day12/index.ts)_
 
 ## `advent2021 day13`
 
@@ -121,7 +122,7 @@ ALIASES
   $ advent2021 day:13
 ```
 
-_See code: [src/commands/day13/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day13/index.ts)_
+_See code: [src/commands/day13/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day13/index.ts)_
 
 ## `advent2021 day14`
 
@@ -137,7 +138,23 @@ ALIASES
   $ advent2021 day:14
 ```
 
-_See code: [src/commands/day14/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day14/index.ts)_
+_See code: [src/commands/day14/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day14/index.ts)_
+
+## `advent2021 day15`
+
+```
+USAGE
+  $ advent2021 day15
+
+OPTIONS
+  -p, --part=1|2  Part to run
+  -t, --test      Run using test data
+
+ALIASES
+  $ advent2021 day:15
+```
+
+_See code: [src/commands/day15/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day15/index.ts)_
 
 ## `advent2021 day2`
 
@@ -153,7 +170,7 @@ ALIASES
   $ advent2021 day:2
 ```
 
-_See code: [src/commands/day2/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day2/index.ts)_
+_See code: [src/commands/day2/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day2/index.ts)_
 
 ## `advent2021 day3`
 
@@ -169,7 +186,7 @@ ALIASES
   $ advent2021 day:3
 ```
 
-_See code: [src/commands/day3/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day3/index.ts)_
+_See code: [src/commands/day3/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day3/index.ts)_
 
 ## `advent2021 day4`
 
@@ -185,7 +202,7 @@ ALIASES
   $ advent2021 day:4
 ```
 
-_See code: [src/commands/day4/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day4/index.ts)_
+_See code: [src/commands/day4/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day4/index.ts)_
 
 ## `advent2021 day5`
 
@@ -201,7 +218,7 @@ ALIASES
   $ advent2021 day:5
 ```
 
-_See code: [src/commands/day5/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day5/index.ts)_
+_See code: [src/commands/day5/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day5/index.ts)_
 
 ## `advent2021 day6`
 
@@ -217,7 +234,7 @@ ALIASES
   $ advent2021 day:6
 ```
 
-_See code: [src/commands/day6/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day6/index.ts)_
+_See code: [src/commands/day6/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day6/index.ts)_
 
 ## `advent2021 day7`
 
@@ -233,7 +250,7 @@ ALIASES
   $ advent2021 day:7
 ```
 
-_See code: [src/commands/day7/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day7/index.ts)_
+_See code: [src/commands/day7/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day7/index.ts)_
 
 ## `advent2021 day8`
 
@@ -249,7 +266,7 @@ ALIASES
   $ advent2021 day:8
 ```
 
-_See code: [src/commands/day8/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day8/index.ts)_
+_See code: [src/commands/day8/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day8/index.ts)_
 
 ## `advent2021 day9`
 
@@ -265,7 +282,7 @@ ALIASES
   $ advent2021 day:9
 ```
 
-_See code: [src/commands/day9/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.8.0/src/commands/day9/index.ts)_
+_See code: [src/commands/day9/index.ts](https://github.com/roryclaasen/advent2021/blob/v2.9.0/src/commands/day9/index.ts)_
 
 ## `advent2021 help [COMMAND]`
 

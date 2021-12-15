@@ -1,3 +1,19 @@
+# [2.9.0](https://github.com/roryclaasen/advent2021/compare/v2.8.0...v2.9.0) (2021-12-15)
+
+
+### Chore
+
+* Refactors incrementMap to be generic ([3e2494c](https://github.com/roryclaasen/advent2021/commit/3e2494c92e7c94ad5a4e5a855c08cc9066cea6b1))
+* Renames parseInput variables in day14 ([cff8460](https://github.com/roryclaasen/advent2021/commit/cff84600f4b07a67171580480ce5166c057cd77a))
+
+### New
+
+* Adds day 15 completed challenge ([8a3ca63](https://github.com/roryclaasen/advent2021/commit/8a3ca6390e942538845f1e21133851be29170f47))
+
+### Update
+
+* Makes day9 use the new PointMap ([cc836c9](https://github.com/roryclaasen/advent2021/commit/cc836c904830b851ce49fa351fe0edfaadbf0982))
+
 # [2.8.0](https://github.com/roryclaasen/advent2021/compare/v2.7.0...v2.8.0) (2021-12-14)
 
 
