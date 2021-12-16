@@ -1,5 +1,3 @@
-require('tsconfig-paths').register();
-
 const path = require('path');
 process.env.TS_NODE_PROJECT = path.resolve('tsconfig.test.json');
 process.env.NODE_ENV = 'development';
