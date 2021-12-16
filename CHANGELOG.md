@@ -1,3 +1,23 @@
+# [2.11.0](https://github.com/roryclaasen/advent2021/compare/v2.10.0...v2.11.0) (2021-12-16)
+
+
+### Chore
+
+* Moves tsconfig-paths register to .mochaharc.json ([36c8bc7](https://github.com/roryclaasen/advent2021/commit/36c8bc795b2b68c0694d04d13567f97df6cb4ae5))
+* Removes outdated package ([99264c3](https://github.com/roryclaasen/advent2021/commit/99264c3450c3ac2c7420e3529d573d866d80c3d8))
+
+### Docs
+
+* Adds back the readme ([32f6784](https://github.com/roryclaasen/advent2021/commit/32f67849cb3d123f7b274b2e8c43cea6cdd5e906))
+
+### New
+
+* Adds day 16 completed challenge ([8eb69c9](https://github.com/roryclaasen/advent2021/commit/8eb69c9b4224d67ae68539364246713805f17701))
+
+### Upgrade
+
+* Updates @oclif/plugin-help to 5.1.10 ([05cbe2d](https://github.com/roryclaasen/advent2021/commit/05cbe2d58b15dad01521bd7dfe0c18f07be16fc1))
+
 # [2.10.0](https://github.com/roryclaasen/advent2021/compare/v2.9.0...v2.10.0) (2021-12-15)
 
 
