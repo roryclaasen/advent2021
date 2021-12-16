@@ -29,8 +29,11 @@ export default abstract class AdventCommand<TInput = string[], TAnswer1 = number
 
     private async compute(test: boolean, part: number): Promise<ComputeAnswer<TAnswer1 | TAnswer2>[]> {
         cli.action.start(`Reading input`, '', { stdout: true });
+        const start = performance.now();
         const input = await this.parseInput(test);
-        cli.action.stop();
+        const end = performance.now();
+        const duration = end - start;
+        cli.action.stop('done. Took ' + (duration > 1000 ? (duration / 1000).toFixed(2) + 's' : duration.toFixed(2) + 'ms'));
 
         const answers: ComputeAnswer<TAnswer1 | TAnswer2>[] = [];
 
