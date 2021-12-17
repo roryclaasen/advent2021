@@ -1,3 +1,10 @@
+## [2.11.3](https://github.com/roryclaasen/advent2021/compare/v2.11.2...v2.11.3) (2021-12-17)
+
+
+### Fix
+
+* Adds echo to end of build, prepack is hanging and I need to know where ([a6e9a08](https://github.com/roryclaasen/advent2021/commit/a6e9a0876a0248602a40b761132ab8ce9d575337))
+
 ## [2.11.2](https://github.com/roryclaasen/advent2021/compare/v2.11.1...v2.11.2) (2021-12-17)
 
 
