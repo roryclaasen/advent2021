@@ -1,3 +1,14 @@
+## [2.11.2](https://github.com/roryclaasen/advent2021/compare/v2.11.1...v2.11.2) (2021-12-17)
+
+
+### Build
+
+* Adds lock file to files that can be updated after a release ([d417ef5](https://github.com/roryclaasen/advent2021/commit/d417ef5b926f71b02139518990c964672ffc2f92))
+
+### Fix
+
+* Possible fix to release being blocked, changes auth to GH_TOKEN ([5159fc7](https://github.com/roryclaasen/advent2021/commit/5159fc79a682171aca59cbe0fc78e7df5bfb07ae))
+
 ## [2.11.1](https://github.com/roryclaasen/advent2021/compare/v2.11.0...v2.11.1) (2021-12-17)
 
 
