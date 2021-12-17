@@ -12,14 +12,19 @@ type ComputeAnswer<T> = {
 export default abstract class AdventCommand<TInput = string[], TAnswer1 = number, TAnswer2 = TAnswer1> extends Command {
     protected abstract parseInput(test: boolean): Promise<TInput>;
 
-    protected abstract part1(input: TInput): TAnswer1;
+    protected abstract part1(input: TInput): TAnswer1 | Promise<TAnswer1>;
 
-    protected abstract part2(input: TInput): TAnswer2;
+    protected abstract part2(input: TInput): TAnswer2 | Promise<TAnswer2>;
 
-    private computeAnswer(part: number, task: () => TAnswer1 | TAnswer2): ComputeAnswer<TAnswer1 | TAnswer2> {
+    private async computeAnswer(part: number, task: () => TAnswer1 | TAnswer2 | Promise<TAnswer1 | TAnswer2>): Promise<ComputeAnswer<TAnswer1 | TAnswer2>> {
         cli.action.start(`Processing part ${part}`, '', { stdout: true });
         const start = performance.now();
-        const answer = task();
+
+        let answer = task();
+        if (answer instanceof Promise) {
+            answer = await answer;
+        }
+
         const end = performance.now();
         const duration = end - start;
         cli.action.stop('done. Took ' + (duration > 1000 ? (duration / 1000).toFixed(2) + 's' : duration.toFixed(2) + 'ms'));
@@ -39,21 +44,22 @@ export default abstract class AdventCommand<TInput = string[], TAnswer1 = number
 
         switch (part) {
             case 1: {
-                answers.push(this.computeAnswer(1, () => this.part1(input)));
+                const part1 = await this.computeAnswer(1, () => this.part1(input));
+                answers.push(part1);
                 break;
             }
 
             case 2: {
-                answers.push(this.computeAnswer(2, () => this.part2(input)));
+                const part2 = await this.computeAnswer(2, () => this.part2(input));
+                answers.push(part2);
                 break;
             }
 
             default: {
                 const input2 = cloneDeep(input);
-                answers.push(
-                    this.computeAnswer(1, () => this.part1(input)),
-                    this.computeAnswer(2, () => this.part2(input2))
-                );
+                const part1 = await this.computeAnswer(1, () => this.part1(input));
+                const part2 = await this.computeAnswer(2, () => this.part2(input2));
+                answers.push(part1, part2);
                 break;
             }
         }
