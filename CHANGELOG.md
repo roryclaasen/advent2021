@@ -1,3 +1,10 @@
+## [2.11.5](https://github.com/roryclaasen/advent2021/compare/v2.11.4...v2.11.5) (2021-12-17)
+
+
+### Fix
+
+* Changes output dir back to lib, fixes oclif readme not picking up the correct dir ([8baf526](https://github.com/roryclaasen/advent2021/commit/8baf526ee91b28267589a586cb6759f48c1bc98e))
+
 ## [2.11.4](https://github.com/roryclaasen/advent2021/compare/v2.11.3...v2.11.4) (2021-12-17)
 
 
