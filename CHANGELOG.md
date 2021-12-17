@@ -1,3 +1,10 @@
+## [2.11.4](https://github.com/roryclaasen/advent2021/compare/v2.11.3...v2.11.4) (2021-12-17)
+
+
+### Fix
+
+* Attempts to fix prepack as its is hanging ([0d89e46](https://github.com/roryclaasen/advent2021/commit/0d89e4601f31af37f5a09be164dec477c4811b2a))
+
 ## [2.11.3](https://github.com/roryclaasen/advent2021/compare/v2.11.2...v2.11.3) (2021-12-17)
 
 
