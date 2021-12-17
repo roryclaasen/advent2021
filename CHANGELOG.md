@@ -1,3 +1,18 @@
+# [2.12.0](https://github.com/roryclaasen/advent2021/compare/v2.11.5...v2.12.0) (2021-12-17)
+
+
+### Fix
+
+* Updates prepack command. This was accidentally reverted ([c0de41b](https://github.com/roryclaasen/advent2021/commit/c0de41bdcf86c632768351d42e62859770a973e2))
+
+### New
+
+* Adds day 17 completed challenge ([3c1c8d0](https://github.com/roryclaasen/advent2021/commit/3c1c8d00ff3244ec318cd80e4e15dd83bf06547d))
+
+### Update
+
+* Can now support promise parts ([bcfa671](https://github.com/roryclaasen/advent2021/commit/bcfa67126c4bec14381411b4d167b8cd40210e9a))
+
 ## [2.11.5](https://github.com/roryclaasen/advent2021/compare/v2.11.4...v2.11.5) (2021-12-17)
 
 
