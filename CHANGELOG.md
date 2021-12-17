@@ -1,3 +1,10 @@
+## [2.11.1](https://github.com/roryclaasen/advent2021/compare/v2.11.0...v2.11.1) (2021-12-17)
+
+
+### Fix
+
+* Attempts to fix ci issues ([93c0bb2](https://github.com/roryclaasen/advent2021/commit/93c0bb2f3136c06d2d593ab4d377d386bc2d7369))
+
 # [2.11.0](https://github.com/roryclaasen/advent2021/compare/v2.10.0...v2.11.0) (2021-12-16)
 
 
