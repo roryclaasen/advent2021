@@ -21,6 +21,8 @@ jobs:
           cache: 'npm'
       - name: Install Dependencies
         run: npm ci
+      - name: Build
+        run: npm run build
       - name: Test
         run: npm test
 
@@ -56,6 +58,8 @@ jobs:
           cache: 'npm'
       - name: Install Dependencies
         run: npm ci
+      - name: Build
+        run: npm run build
       - name: Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
