@@ -5,7 +5,7 @@
   "bin": {
     "advent2021": "./bin/run"
   },
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "dirname": "advent2021",
   "repository": {
     "type": "git",
@@ -60,13 +60,13 @@
   },
   "files": [
     "/bin",
-    "/dist",
+    "/lib",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
   "oclif": {
     "bin": "advent2021",
-    "commands": "./dist/commands",
+    "commands": "./lib/commands",
     "plugins": [
       "@oclif/plugin-help"
     ]
@@ -76,12 +76,12 @@
     "dev": "node ./bin/dev",
     "lint": "eslint . --ext .ts --config .eslintrc",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "build": "rimraf dist && tsc -b && tscpaths -p tsconfig.json -s ./src -o ./dist && copyfiles -u 1 ./src/commands/**/input ./src/commands/**/testinput ./dist && echo Built!",
+    "build": "rimraf lib && tsc -b && tscpaths -p tsconfig.json -s ./src -o ./lib && copyfiles -u 1 ./src/commands/**/input ./src/commands/**/testinput ./lib && echo Built!",
     "postpack": "rimraf oclif.manifest.json",
-    "prepack": "npm run build && oclif manifest ./ && oclif readme",
+    "prepack": "npm run build && oclif manifest && oclif readme",
     "version": "oclif readme && git add README.md"
   },
-  "types": "dist/index.d.ts",
+  "types": "lib/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
