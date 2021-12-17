@@ -78,7 +78,7 @@
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "build": "rimraf dist && tsc -b && tscpaths -p tsconfig.json -s ./src -o ./dist && copyfiles -u 1 ./src/commands/**/input ./src/commands/**/testinput ./dist && echo Built!",
     "postpack": "rimraf oclif.manifest.json",
-    "prepack": "npm run build && oclif manifest && oclif readme",
+    "prepack": "npm run build && oclif manifest ./ && oclif readme",
     "version": "oclif readme && git add README.md"
   },
   "types": "dist/index.d.ts",
